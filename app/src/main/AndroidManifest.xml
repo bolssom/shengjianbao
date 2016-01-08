@@ -68,6 +68,14 @@
             android:name=".DingyueActivity"
             android:label="@string/title_activity_dingyue" >
         </activity>
+        <activity
+            android:name=".XuanzediquActivity"
+            android:label="@string/title_activity_xanzeditu" >
+        </activity>
+        <activity
+            android:name=".RemenActivity"
+            android:label="@string/title_activity_remen" >
+        </activity>
     </application>
 
 </manifest>

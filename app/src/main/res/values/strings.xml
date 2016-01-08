@@ -21,4 +21,6 @@
     <string name="title_activity_citylist">CitylistActivity</string>
     <string name="no_data">没有找到符合条件的数据</string>
     <string name="title_activity_dingyue">开启订阅</string>
+    <string name="title_activity_xanzeditu">选择地区</string>
+    <string name="title_activity_remen">热门精选</string>
 </resources>

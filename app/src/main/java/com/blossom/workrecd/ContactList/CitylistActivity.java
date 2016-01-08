@@ -22,6 +22,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -62,6 +63,7 @@ public class CitylistActivity extends Activity implements OnScrollListener {
     private ArrayList<City> city_result;
     private ArrayList<String> city_history;
     private EditText sh;
+    private ImageButton left_btn;
     private TextView tv_noresult;
 
     private String currentCity; // 用于保存定位到的城市
@@ -79,6 +81,13 @@ public class CitylistActivity extends Activity implements OnScrollListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citylist);
         personList = (ListView) findViewById(R.id.list_view);
+        left_btn = (ImageButton)findViewById(R.id.left_btn);
+        left_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         allCity_lists = new ArrayList<City>();
         city_hot = new ArrayList<City>();
         city_result = new ArrayList<City>();

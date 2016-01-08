@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="#fed809"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/title_back_btn" />
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/Text.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="设置匹配条件" />
+
+        <TextView
+            android:id="@+id/right_txt"
+            style="@style/Text.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:paddingRight="10dp"
+            android:src="@mipmap/home_right_btn"
+            android:text="保存"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+       android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/diquxuanze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/dy_icon_01"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:src="@mipmap/dy_icon_01" />
+
+            <TextView
+                style="@style/DyTextStyle"
+                android:layout_toRightOf="@id/dy_icon_01"
+                android:text="地区选择" />
+
+
+            <ImageView
+                style="@style/RightIconStyle"
+                android:src="@mipmap/youjiantou" />
+        </RelativeLayout>
+
+        <View style="@style/Line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/dy_icon_02"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:src="@mipmap/dy_icon_01" />
+
+            <TextView
+                style="@style/DyTextStyle"
+                android:layout_toRightOf="@id/dy_icon_02"
+                android:text="行业选择" />
+
+
+            <ImageView
+                style="@style/RightIconStyle"
+                android:src="@mipmap/youjiantou" />
+        </RelativeLayout>
+
+        <View style="@style/Line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/dy_icon_03"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:src="@mipmap/dy_icon_01" />
+
+            <TextView
+                android:id="@+id/xingbie"
+                style="@style/DyTextStyle"
+                android:layout_toRightOf="@id/dy_icon_03"
+                android:text="性别选择" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal" >
+                <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                    style="@style/DyTextStyle"
+                android:text="男" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/DyTextStyle"
+                    android:text="女" /></RadioGroup>
+
+        </RelativeLayout>
+
+        <View style="@style/Line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/dy_icon_04"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:src="@mipmap/dy_icon_01" />
+
+            <TextView
+                style="@style/DyTextStyle"
+                android:layout_toRightOf="@id/dy_icon_04"
+                android:text="空闲时间" />
+
+
+            <ImageView
+                style="@style/RightIconStyle"
+                android:src="@mipmap/youjiantou" />
+        </RelativeLayout>
+
+        <View style="@style/Line" />
+    </LinearLayout>
+
+
+</LinearLayout>

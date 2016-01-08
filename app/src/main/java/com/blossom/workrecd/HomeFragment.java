@@ -292,17 +292,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case  R.id.btn_rjzq:
-                System.out.println("00000000000000");
-                break;
             case R.id.home_dingyue:
-                System.out.println("&&&&&&&&&&&&&&&&&&");
                 Intent dy = new Intent(mParent.getContext(),DingyueActivity.class);
                 startActivity(dy);
+                break;
+            case  R.id.btn_rjzq:
                 break;
             case R.id.btn_sjxt:
                 break;
             case R.id.btn_rmzx:
+                Intent remen = new Intent(mParent.getContext(),RemenActivity.class);
+                startActivity(remen);
                 break;
         }
     }

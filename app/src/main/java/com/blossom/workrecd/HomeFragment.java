@@ -9,7 +9,10 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.blossom.workrecd.Adapter.JianZhiAdapter;
@@ -27,10 +30,11 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
+import com.lidroid.xutils.view.annotation.event.OnItemClick;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener{
     private static final String TAG = HomeFragment.class.getSimpleName();
     private static final int WHAT_DID_LOAD_DATA = 0;
     private static final int WHAT_DID_REFRESH = 1;
@@ -42,7 +46,6 @@ public class HomeFragment extends Fragment {
     private String jsonstr;
     public int pagenum = 1;
 
-
     @ViewInject(R.id.mListView)
     private CustomListView mListView;
     @ViewInject(R.id.home_left_location)
@@ -52,6 +55,9 @@ public class HomeFragment extends Fragment {
     @ViewInject(R.id.home_location)
     private LinearLayout home_linear_location;
 
+
+    private ImageView home_dingyue;
+    private Button btn_rjzq,btn_sjxt,btn_rmzx;
 
     private ArrayList<JFC> mList = new ArrayList<JFC>();
     private JianZhiAdapter mAdapter;
@@ -63,7 +69,7 @@ public class HomeFragment extends Fragment {
                     if (msg.obj != null) {
                         JiFaBean jfdata = (JiFaBean) msg.obj;
                         mList.addAll(jfdata.getData());
-                        System.out.println("load--->" + mList + "/n");
+                       // System.out.println("load--->" + mList + "/n");
                         mAdapter.notifyDataSetChanged();
                     }
                     break;
@@ -72,7 +78,7 @@ public class HomeFragment extends Fragment {
                         JiFaBean jfdata = (JiFaBean) msg.obj;
                         mList.clear();
                         mList.addAll(jfdata.getData());
-                        System.out.println("refresh--->" + mList);
+                       // System.out.println("refresh--->" + mList);
                         mAdapter.notifyDataSetChanged();
                     }
                     mListView.onRefreshComplete();//下拉刷新完成
@@ -81,8 +87,7 @@ public class HomeFragment extends Fragment {
                     if (mAdapter != null) {
                         JiFaBean jfdata = (JiFaBean) msg.obj;
                         mList.addAll(jfdata.getData());
-                        System.out.println("=======" + jfdata.getData().get(0).getId());
-                        System.out.println("more--->" + mList);
+                       // System.out.println("=======" + jfdata.getData().get(0).getId());
                         mAdapter.notifyDataSetChanged();
                     }
                     mListView.onLoadComplete();//加载更多完成
@@ -113,6 +118,15 @@ public class HomeFragment extends Fragment {
         mParent = getView();
         initdata();
         View hv = LayoutInflater.from(mParent.getContext()).inflate(R.layout.home_listview_banner, null);
+        btn_rjzq = (Button)hv.findViewById(R.id.btn_rjzq);
+        btn_sjxt = (Button)hv.findViewById(R.id.btn_sjxt);
+        btn_rmzx = (Button)hv.findViewById(R.id.btn_rmzx);
+        home_dingyue = (ImageView)hv.findViewById(R.id.home_dingyue);
+        btn_rjzq.setOnClickListener(this);
+        btn_sjxt.setOnClickListener(this);
+        btn_rmzx.setOnClickListener(this);
+        home_dingyue.setOnClickListener(this);
+
         mListView.addHeaderView(hv);
         mAdapter = new JianZhiAdapter(mList, mActivity);
         mListView.setAdapter(mAdapter);
@@ -147,6 +161,11 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    @OnItemClick(R.id.mListView)
+    public void mingxviewClick(AdapterView<?> parent, View view, int position, long id) {
+      System.out.println("__________"+parent.getAdapter().getItem(0));
+
+    }
     //初始化页面
     public void initdata() {
         RequestParams params = new RequestParams();
@@ -268,6 +287,24 @@ public class HomeFragment extends Fragment {
         super.setMenuVisibility(menuVisible);
         if (this.getView() != null)
             this.getView().setVisibility(menuVisible ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case  R.id.btn_rjzq:
+                System.out.println("00000000000000");
+                break;
+            case R.id.home_dingyue:
+                System.out.println("&&&&&&&&&&&&&&&&&&");
+                Intent dy = new Intent(mParent.getContext(),DingyueActivity.class);
+                startActivity(dy);
+                break;
+            case R.id.btn_sjxt:
+                break;
+            case R.id.btn_rmzx:
+                break;
+        }
     }
 }
 

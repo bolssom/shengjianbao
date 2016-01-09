@@ -1,6 +1,7 @@
 package com.blossom.workrecd;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,16 +11,20 @@ import android.view.ViewGroup;
 
 import com.blossom.workrecd.Utils.ToastHelper;
 import com.blossom.workrecd.View.ExpandTabView;
+import com.blossom.workrecd.View.TitleView;
 import com.blossom.workrecd.View.ViewMid1;
 import com.blossom.workrecd.View.ViewLeft;
 import com.blossom.workrecd.View.ViewMid2;
 import com.blossom.workrecd.View.ViewRight;
 import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import java.util.ArrayList;
 
 public class Fragment2 extends Fragment {
-
+    @ViewInject(R.id.title)
+    private TitleView mtitleview;
     private View mParent;
     private FragmentActivity mActivity;
     private ExpandTabView expandTabView;
@@ -56,6 +61,21 @@ public class Fragment2 extends Fragment {
         viewMid2 = new ViewMid2(mParent.getContext());
         viewRight = new ViewRight(mParent.getContext());
 
+        mtitleview.setTitle("淘生兼");
+        mtitleview.setLeftImageButton(new TitleView.OnLeftImageButtonClickLister() {
+            @Override
+            public void onClick(View button) {
+                ( (MainActivity)getActivity()).setTab(0);
+            }
+        });
+        mtitleview.setRightImageButton(new TitleView.OnRightImageButtonClickLister() {
+            @Override
+            public void onClick(View button) {
+                Intent moreintent = new Intent(mParent.getContext(), MsgActivity.class);
+                startActivity(moreintent);
+            }
+        });
+
     }
     private  void  initValue(){
         mViewArray.add(viewLeft);
@@ -77,7 +97,7 @@ public class Fragment2 extends Fragment {
         viewLeft.setOnSelectListener(new ViewLeft.OnSelectListener() {
             @Override
             public void getValue(String showText) {
-                onRefresh(viewLeft,showText);
+                onRefresh(viewLeft, showText);
 
             }
         });
@@ -110,7 +130,7 @@ public class Fragment2 extends Fragment {
             expandTabView.setTitle(showText, position);
         }
         //Toast.makeText(MainActivity.this, showText, Toast.LENGTH_SHORT).show();
-        ToastHelper.show(mParent.getContext(),showText);
+        ToastHelper.show(mParent.getContext(), showText);
     }
     private int getPosition(View tView){
         for (int i = 0;i < mViewArray.size();i++){
@@ -131,6 +151,14 @@ public class Fragment2 extends Fragment {
         super.setMenuVisibility(menuVisible);
         if (this.getView() != null)
             this.getView().setVisibility(menuVisible ? View.VISIBLE : View.GONE);
+    }
+    @OnClick(R.id.taoshengjian_01)
+    public void myClick(View v){
+        switch (v.getId()){
+            case R.id.taoshengjian_01:
+
+                break;
+        }
     }
 }
 

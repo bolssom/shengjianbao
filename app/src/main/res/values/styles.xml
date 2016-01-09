@@ -48,6 +48,11 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1.0dip</item>
     </style>
+    <style name="SLine">
+        <item name="android:background">#ffcccccc</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_width">0.5dip</item>
+    </style>
     <style name="DyTextStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -69,5 +74,14 @@
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="XuetangText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">#5f5f5f</item>
+        <item name="android:textSize">20dp</item>
     </style>
 </resources>

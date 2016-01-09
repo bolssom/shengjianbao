@@ -23,4 +23,9 @@
     <string name="title_activity_dingyue">开启订阅</string>
     <string name="title_activity_xanzeditu">选择地区</string>
     <string name="title_activity_remen">热门精选</string>
+    <string name="title_activity_qiye">QiyeActivity</string>
+    <string name="title_activity_mingqidetail">MingqidetailActivity</string>
+    <string name="title_activity_rijie">日结专区</string>
+    <string name="title_activity_xuetang">生兼学堂</string>
+    <string name="title_activity_luntan">生兼论坛</string>
 </resources>

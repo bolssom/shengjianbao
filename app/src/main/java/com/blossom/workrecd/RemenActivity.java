@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.blossom.workrecd.Dao.ADInfo;
@@ -13,6 +14,7 @@ import com.blossom.workrecd.View.TitleView;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,9 @@ public class RemenActivity extends Activity {
     private TitleView mtitleview;
     @ViewInject(R.id.ad_view)
     private ImageCycleView ad_view;
+    @ViewInject(R.id.imgbtn_mingqi)
+    private ImageButton imgbtn_mingqi;
+
     private ArrayList<ADInfo> adInfos = new ArrayList<ADInfo>();
     private String[] imageurls = {
             "http://77l57k.com1.z0.glb.clouddn.com/productbanner1.jpg",
@@ -57,7 +62,7 @@ public class RemenActivity extends Activity {
         mtitleview.setRightImageButton(new TitleView.OnRightImageButtonClickLister() {
             @Override
             public void onClick(View button) {
-                Intent moreintent = new Intent(RemenActivity.this, MoreActivity.class);
+                Intent moreintent = new Intent(RemenActivity.this, MsgActivity.class);
                 startActivity(moreintent);
             }
         });
@@ -74,8 +79,18 @@ public class RemenActivity extends Activity {
         @Override
         public void onImageClick(ADInfo info, int postion, View imageView) {
             //ToastHelper.show(LiuyanActivity.this, "content->" + info.getContent());
-            Intent gongjiintent = new Intent(RemenActivity.this, MoreActivity.class);
+            Intent gongjiintent = new Intent(RemenActivity.this, MsgActivity.class);
             startActivity(gongjiintent);
         }
     };
+
+    @OnClick(R.id.imgbtn_mingqi)
+    public void myClick(View v){
+        switch (v.getId()){
+            case R.id.imgbtn_mingqi:
+                Intent qy = new Intent(RemenActivity.this,QiyeActivity.class);
+                startActivity(qy);
+                break;
+        }
+    }
 }

@@ -43,7 +43,7 @@
         <activity android:name=".Launcher.WellComeActivity" >
         </activity>
         <activity
-            android:name=".MoreActivity"
+            android:name=".MsgActivity"
             android:label="@string/title_activity_more" >
         </activity>
         <activity
@@ -75,6 +75,22 @@
         <activity
             android:name=".RemenActivity"
             android:label="@string/title_activity_remen" >
+        </activity>
+        <activity
+            android:name=".QiyeActivity"
+            android:label="@string/title_activity_qiye" >
+        </activity>
+        <activity
+            android:name=".MingqidetailActivity"
+            android:label="@string/title_activity_mingqidetail" >
+        </activity>
+        <activity
+            android:name=".RijieActivity"
+            android:label="@string/title_activity_rijie" >
+        </activity>
+        <activity
+            android:name=".XuetangActivity"
+            android:label="@string/title_activity_xuetang" >
         </activity>
     </application>
 

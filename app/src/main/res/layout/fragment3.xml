@@ -1,9 +1,98 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.blossom.workrecd.Fragment3">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fefefe"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="这是活动" />
+    <com.blossom.workrecd.View.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/zhiding_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/dy_icon_01"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:src="@mipmap/shuben" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/dy_icon_01"
+                android:text="这里是话题置顶区域"
+                android:textColor="#606060"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                style="@style/RightIconStyle"
+                android:src="@mipmap/youjiantou" />
+        </RelativeLayout>
+
+        <View style="@style/Line" />
+
+        <RelativeLayout
+            android:id="@+id/zhiding_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/dy_icon_02"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:src="@mipmap/shuben" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/dy_icon_02"
+                android:text="这里是话题置顶区域"
+                android:textColor="#606060"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                style="@style/RightIconStyle"
+                android:src="@mipmap/youjiantou" />
+        </RelativeLayout>
+
+        <View style="@style/Line" />
+
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/item_luntan"/>
+            <include layout="@layout/item_luntan"/>
+            <include layout="@layout/item_luntan"/>
+            <include layout="@layout/item_luntan"/>
+            <include layout="@layout/item_luntan"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+

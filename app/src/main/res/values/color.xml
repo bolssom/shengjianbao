@@ -11,4 +11,8 @@
 
     <color name="popup_main_background">#b0000000</color>
     <color name="choose_eara_item_press_color">#f4f4f4</color>
+
+
+    <color name="radio_color_bg_selected">#fefefe</color>
+    <color name="radio_color_bg_normal">#fbfbfb</color>
 </resources>

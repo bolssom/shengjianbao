@@ -273,7 +273,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     }
 
     private void goMoreActivity() {
-        Intent intent = new Intent(mActivity, MoreActivity.class);
+        Intent intent = new Intent(mActivity, MsgActivity.class);
         startActivity(intent);
     }
 
@@ -297,8 +297,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 startActivity(dy);
                 break;
             case  R.id.btn_rjzq:
+                ((MainActivity)getActivity()).setTab(1);
                 break;
             case R.id.btn_sjxt:
+                Intent xuetang = new Intent(mParent.getContext(),XuetangActivity.class);
+                startActivity(xuetang);
                 break;
             case R.id.btn_rmzx:
                 Intent remen = new Intent(mParent.getContext(),RemenActivity.class);

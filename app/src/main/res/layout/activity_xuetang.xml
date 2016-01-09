@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fefefe"
+    android:orientation="vertical">
+
+    <com.blossom.workrecd.View.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            style="@style/XuetangText"
+            android:text="题库"
+            android:padding="6dp"
+            />
+        <View
+            style="@style/Line"
+            />
+        <com.blossom.workrecd.View.GridViewForScrollView
+            android:id="@+id/gridview_xuetang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:stretchMode="columnWidth"
+            android:horizontalSpacing="0dp"
+            android:verticalSpacing="0dp"
+            android:gravity="center"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#f2f2f2"
+            />
+        <TextView
+            style="@style/XuetangText"
+            android:text="新闻"
+            android:padding="6dp"
+            />
+        <View
+            style="@style/Line"
+            />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:src="@mipmap/newspic"
+            android:scaleType="centerCrop"
+            android:layout_margin="6dp"/>
+        <View
+            style="@style/Line"
+            />
+        <include
+            layout="@layout/item_news"/>
+        <View
+            style="@style/Line"
+            />
+        <include layout="@layout/item_news"/>
+        <View
+            style="@style/Line"
+            />
+        <include layout="@layout/item_news"/>
+        <View
+            style="@style/Line"
+            />
+        <include layout="@layout/item_news"/>
+        <View
+            style="@style/Line"
+            />
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

@@ -89,6 +89,22 @@ public class MainActivity extends FragmentActivity  implements
         // TODO Auto-generated method stub
 
     }
+    public void setTab(int index){
+        switch (index){
+            case 0:
+                mTab1.performClick();
+                break;
+            case 1:
+                mTab2.performClick();
+                break;
+            case 2:
+                mTab3.performClick();
+                break;
+            case 3:
+                mTab4.performClick();
+                break;
+        }
+    }
     private  long mExitTime;
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

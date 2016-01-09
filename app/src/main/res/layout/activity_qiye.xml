@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <com.blossom.workrecd.View.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:src="@mipmap/remen_mqjx"
+            android:scaleType="centerCrop"/>
+       <ImageButton
+           android:id="@+id/mingqi_01"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+          android:src="@mipmap/peitu"
+           android:background="@color/transparent"
+          android:scaleType="centerCrop"
+           android:padding="10dp"
+           />
+        <View style="@style/Line" />
+        <ImageButton
+            android:id="@+id/mingqi_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/peitu"
+            android:background="@color/transparent"
+            android:scaleType="centerCrop"
+            android:padding="10dp"
+            />
+        <View style="@style/Line" />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/peitu"
+            android:background="@color/transparent"
+            android:scaleType="centerCrop"
+            android:padding="10dp"
+            />
+        <View style="@style/Line" />
+
+    </LinearLayout>
+    </LinearLayout>

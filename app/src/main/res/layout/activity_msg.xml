@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <com.blossom.workrecd.View.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+<RadioGroup
+    android:id="@+id/msg_radio"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="40dp"
+        android:text="好友列表"
+        android:padding="5dp"
+        android:textColor="#747474"
+        android:textSize="18sp"
+        android:button="@null"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/radiobtn_bg"
+        />
+    <View style="@style/SLine"/>
+    <RadioButton
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="好友请求"
+        android:textColor="#747474"
+        android:textSize="18sp"
+        android:button="@null"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/radiobtn_bg"
+        />
+</RadioGroup>
+    <include layout="@layout/item_friend"/>
+    <View style="@style/Line"/>
+    <include layout="@layout/item_friend"/>
+    <View style="@style/Line"/>
+    <include layout="@layout/item_friend"/>
+    <View style="@style/Line"/>
+    <include layout="@layout/item_friend"/>
+</LinearLayout>

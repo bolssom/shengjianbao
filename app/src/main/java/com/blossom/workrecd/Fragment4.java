@@ -8,56 +8,48 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.GridView;
+import android.widget.SimpleAdapter;
 
-import com.blossom.workrecd.Login.RegisterActivity;
-import com.blossom.workrecd.Utils.ToastHelper;
+import com.blossom.workrecd.Login.LoginActivity;
+import com.blossom.workrecd.View.GridViewForScrollView;
 import com.blossom.workrecd.View.TitleView;
-import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.exception.HttpException;
-import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
-import com.lidroid.xutils.view.annotation.event.OnFocusChange;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment4 extends Fragment{
+public class Fragment4 extends Fragment {
 
-    private View mParent;
+    private View myPartent;
     private FragmentActivity mactivity;
-    private TitleView mTitle;
-    @ViewInject(R.id.login_username)
-    private EditText login_username;
-    @ViewInject(R.id.login_password)
-    private EditText login_password;
-    @ViewInject(R.id.user_login_button)
-    private Button user_login_button;
-    @ViewInject(R.id.user_register_button)
-    private Button user_register_button;
-    @ViewInject(R.id.result_txt)
-    private TextView resultText;
-    private EditText reregister_passwd;
-    private Button register_submit;
+    @ViewInject(R.id.title)
+    private TitleView mtitleview;
+    @ViewInject(R.id.myinfogridview)
+    private GridViewForScrollView myInFoGridView;
+    private List<Map<String, Object>> data_list;
+    private int[] icon_pic = {
+            R.mipmap.person_gv_01,
+            R.mipmap.person_gv_02,
+            R.mipmap.person_gv_03,
+            R.mipmap.person_gv_04,
+            R.mipmap.person_gv_05,
+            R.mipmap.person_gv_06};
+    private String[] icon_name = {"生涯", "钱包", "积分", "收藏", "题库", "话题"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment4,null);
-        ViewUtils.inject(this,view);
+        View view = inflater.inflate(R.layout.fragment4, null);
+        ViewUtils.inject(this, view);
         return view;
     }
 
@@ -65,102 +57,50 @@ public class Fragment4 extends Fragment{
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mactivity = getActivity();
-        mParent = getView();
-        mTitle = (TitleView)mParent.findViewById(R.id.title);
-        mTitle.setTitle("登录");
-        mTitle.hiddenLeftImageButton();
-        mTitle.hiddenRightImageButton();
-
+        myPartent = getView();
+        initview();
+        data_list = new ArrayList<Map<String, Object>>();
+        getData();
+        SimpleAdapter simpleAdapter = new SimpleAdapter(myPartent.getContext(), data_list, R.layout.person_gridview, new String[]{"image", "text"}, new int[]{R.id.mygridview_pic, R.id.mygridview_txt});
+        myInFoGridView.setAdapter(simpleAdapter);
     }
 
-@OnFocusChange({R.id.login_username,R.id.login_password})
-public void focuschage(View v,boolean hasFocus){
-    switch (v.getId()){
-        case R.id.login_username:
-            if (!hasFocus){
-                String username = login_username.getText().toString().trim();
-                if (username.length()<4){
-                    ToastHelper.show(this.getContext(),"用户名不能少于4个字符！");
-                }
-            }
-            break;
-        case R.id.login_password:
-            if (!hasFocus){
-                String password = login_password.getText().toString().trim();
-                if (password.length()<6){
-                    ToastHelper.show(this.getContext(),"密码不能少于6个字符");
-                }
-            }
-    }
-}
+    private void initview() {
 
-@OnClick({R.id.user_login_button,R.id.user_register_button})
-public  void login(View v){
-    switch (v.getId()){
-        case R.id.user_login_button:
-            if(checkEdit()) {
-               login_submit();
-            }
-            break;
-        case R.id.user_register_button:
-            Intent intent = new Intent(this.getContext(), RegisterActivity.class);
-            startActivity(intent);
-            break;
-    }
-
-}
-    private boolean checkEdit(){
-        if(login_username.getText().toString().trim().equals("")){
-            Toast.makeText(this.getContext(), "用户名不能为空", Toast.LENGTH_SHORT).show();
-        }else if(login_password.getText().toString().trim().equals("")){
-            Toast.makeText(this.getContext(), "密码不能为空", Toast.LENGTH_SHORT).show();
-        }else{
-            return true;
-        }
-        return false;
-    }
-    public void login_submit(){
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat();
-        Date date = new Date(System.currentTimeMillis());
-       // String time = dateFormat.format(date);
-        String time = ""+System.currentTimeMillis();
-       String httpUrl = "http://42.51.27.36/recruit/sys/sysuser/appLogin";
-        //System.out.println(httpUrl+"?time="+time);
-        RequestParams params = new RequestParams();
-        params.addQueryStringParameter("tel","13994243208");
-        params.addQueryStringParameter("password", "123123");
-        params.addQueryStringParameter("time",time);
-        HttpUtils http = new HttpUtils();
-        http.configCurrentHttpCacheExpiry(1000 * 10);
-        http.send(HttpRequest.HttpMethod.POST, httpUrl, params,new RequestCallBack<String>() {
+        mtitleview.setTitle("个人中心");
+        mtitleview.setLeftImageButton(new TitleView.OnLeftImageButtonClickLister() {
             @Override
-            public void onStart() {
-                resultText.setText("conn.....");
-            }
-
-            @Override
-            public void onLoading(long total, long current, boolean isUploading) {
-                if (isUploading){
-                    resultText.setText("upload:"+current+"/"+total);
-                }else {
-                    resultText.setText("replay:"+current+"/"+total);
-                }
-            }
-
-            @Override
-            public void onSuccess(ResponseInfo<String> responseInfo) {
-                resultText.setText("replay:"+responseInfo.result);
-            }
-
-            @Override
-            public void onFailure(HttpException e, String s) {
-                resultText.setText("login msg----"+s);
+            public void onClick(View button) {
+                ((MainActivity) getActivity()).setTab(0);
             }
         });
+        mtitleview.setRightImageButton(new TitleView.OnRightImageButtonClickLister() {
+            @Override
+            public void onClick(View button) {
+                Intent msgintent = new Intent(myPartent.getContext(), MsgActivity.class);
+                startActivity(msgintent);
+            }
+        });
+
     }
 
-
+    public List<Map<String, Object>> getData() {
+        for (int i = 0; i < icon_pic.length; i++) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("image", icon_pic[i]);
+            map.put("text", icon_name[i]);
+            data_list.add(map);
+        }
+        return data_list;
+    }
+    @OnClick(R.id.person_login)
+    public void myClick(View v){
+        switch (v.getId()){
+            case R.id.person_login:
+                Intent login= new Intent(myPartent.getContext(),LoginActivity.class);
+                startActivity(login);
+                break;}
+    }
     @Override
     public void setMenuVisibility(boolean menuVisible) {
         super.setMenuVisibility(menuVisible);

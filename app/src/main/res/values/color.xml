@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="title_color">#37BCB2</color>
+    <color name="title_color">#ffffff</color>
     <color name="black">#000000</color>
      <color name="black6c">#CCCCCC</color>
     <color name="black6e">#eeeeee</color>
@@ -8,11 +8,14 @@
     <color name="blue">#005df6</color>
     <color name="white">#ffffff</color>
     <color name="gray">#666666</color>
+    <color name="line">#efefef</color>
+    <color name="lv">#cae297</color>
+    <color name="comment_yell">#e3bb16</color>
 
     <color name="popup_main_background">#b0000000</color>
     <color name="choose_eara_item_press_color">#f4f4f4</color>
 
 
-    <color name="radio_color_bg_selected">#fefefe</color>
+    <color name="radio_color_bg_selected">#cccccc</color>
     <color name="radio_color_bg_normal">#fbfbfb</color>
 </resources>

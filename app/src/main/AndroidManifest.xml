@@ -32,7 +32,7 @@
             android:value="GGTAaFGQ1nCW3gDWqG2EM4uK" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Launcher.WellComeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +40,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Launcher.WellComeActivity" >
+        <activity android:name=".Launcher.LauncherActivity" >
         </activity>
         <activity
             android:name=".MsgActivity"
@@ -51,7 +51,7 @@
             android:label="@string/title_activity_register" >
         </activity>
         <activity
-            android:name=".Launcher.LauncherActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_laucher" >
         </activity>
         <activity
@@ -91,6 +91,22 @@
         <activity
             android:name=".XuetangActivity"
             android:label="@string/title_activity_xuetang" >
+        </activity>
+        <activity
+            android:name=".Login.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".Login.MimaActivity"
+            android:label="@string/title_activity_mima" >
+        </activity>
+        <activity
+            android:name=".NewsdetailActivity"
+            android:label="@string/title_activity_newsdetail" >
+        </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail" >
         </activity>
     </application>
 

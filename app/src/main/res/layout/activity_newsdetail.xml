@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="#fed809"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/title_back_btn" />
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/Text.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="新闻" />
+
+        <ImageButton
+            android:id="@+id/right_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingRight="10dp"
+            android:src="@mipmap/daochu" />
+    </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="勿让欠薪和低薪伤害市场经济"
+            android:textColor="#020202"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="生兼包"
+                android:textColor="#8b8b8b"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2016-01-01 09:25:00"
+                android:textColor="#8b8b8b"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View style="@style/Line" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="3dp"
+            android:lineSpacingMultiplier="1.5"
+            android:text="　　元旦过去了，大年三十逐渐靠近，务工者返乡的热潮即将出现，而如果能够消除欠薪给部分工人造成的生活困难，春节一定会有更多的喜庆和祥和。媒体也像往年一样，开始对这一问题给予更多的关注。
+任何社会都很容易被形形色色的教条主义捆绑和干扰。人们在看待和处理经济关系的时候就很难摆脱公式化思维，而一些卓越经济学者提出的理论在开导人们的同时也往往带来困惑，或者被用来为利益集团服务，或者被懒人拿来替代独立思考。亚当·斯密对自由竞争一味追捧，坚决反对政府干预经济活动。如果一个社会对绝对的自由竞争采取包容的态度，那么在文化上和伦理上，人们对少数强者的欲望和利益会有更多的赞誉和认同，而对弱者以及大多数人的利益就会冷淡和漠视。对欠薪问题，政府和社会各界多年来做了大量工作，专家也提出各种政策性和制度性的建议，大家都希望能够有一个有效和长期的解决。这一问题的真正解决可能还有赖于调整我们现在对市场经济总体的看法和态度。我们需要认识到市场经济与社会主义道德能够和谐匹配，特别是认识到社会主义道德的的确确构成市场经济健康发展的必要条件。"
+            android:textColor="#626262"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="可以分享到"
+                android:textColor="#737373"
+                android:textSize="22sp"/>
+            <View style="@style/Line" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center">
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/fx_qq"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="5dp"
+                    android:background="@color/transparent"/>
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/fx_qqkj"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="5dp"
+                    android:background="@color/transparent"/>
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/fx_weibo"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="5dp"
+                    android:background="@color/transparent"/>
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/fx_weixin"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="5dp"
+                    android:background="@color/transparent"/>
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/fx_pyq"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="5dp"
+                    android:background="@color/transparent"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/user_login_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_login_bg"
+                android:textColor="#ffffff"
+                android:text="取消"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+
+</LinearLayout>

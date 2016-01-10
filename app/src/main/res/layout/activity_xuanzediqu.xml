@@ -74,7 +74,7 @@
                 android:id="@+id/dy_icon_02"
                 android:layout_width="36dp"
                 android:layout_height="38dp"
-                android:src="@mipmap/img_loaction" />
+                android:src="@mipmap/zuobiao" />
 
             <TextView
                 style="@style/DyTextStyle"
@@ -105,7 +105,7 @@
 
             <ImageView
                 style="@style/RightIconStyle"
-                android:src="@mipmap/youjiantou" />
+                android:src="@mipmap/jiahao" />
         </RelativeLayout>
 
         <View style="@style/Line" />
@@ -122,7 +122,7 @@
 
             <ImageView
                 style="@style/RightIconStyle"
-                android:src="@mipmap/youjiantou" />
+                android:src="@mipmap/jiahao" />
         </RelativeLayout>
 
         <View style="@style/Line" />
@@ -139,7 +139,7 @@
 
             <ImageView
                 style="@style/RightIconStyle"
-                android:src="@mipmap/youjiantou" />
+                android:src="@mipmap/jiahao" />
         </RelativeLayout>
 
         <View style="@style/Line" />
@@ -156,7 +156,7 @@
 
             <ImageView
                 style="@style/RightIconStyle"
-                android:src="@mipmap/youjiantou" />
+                android:src="@mipmap/jiahao" />
         </RelativeLayout>
 
         <View style="@style/Line" />

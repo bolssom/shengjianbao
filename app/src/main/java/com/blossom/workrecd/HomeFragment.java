@@ -20,6 +20,7 @@ import com.blossom.workrecd.ContactList.CitylistActivity;
 import com.blossom.workrecd.Dao.JFC;
 import com.blossom.workrecd.Dao.JiFaBean;
 import com.blossom.workrecd.Utils.CustomListView;
+import com.blossom.workrecd.Utils.ToastHelper;
 import com.google.gson.Gson;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
@@ -308,6 +309,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 startActivity(remen);
                 break;
         }
+    }
+    @OnItemClick(R.id.mListView)
+    public void myItemClick(AdapterView<?> parent,View v,int position,long id){
+        Intent detail = new Intent(mParent.getContext(),DetailActivity.class);
+        startActivity(detail);
     }
 }
 

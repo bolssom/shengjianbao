@@ -42,8 +42,8 @@ public class  WellComeActivity  extends Activity implements Animation.AnimationL
     public void onAnimationEnd(Animation animation) {
         //动画结束时结束欢迎界面并转到软件的主界面
         preferences = getSharedPreferences("isFirstIn",MODE_PRIVATE);
-        isFirstIn = preferences.getBoolean("isFirstIn",true);
-        if (isFirstIn){
+
+        if ( preferences.getBoolean("isFirstIn",true)){
             new Handler().postDelayed( new Runnable(){
 
                 @Override

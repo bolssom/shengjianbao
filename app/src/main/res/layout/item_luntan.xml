@@ -3,7 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -71,18 +75,21 @@
                 android:textSize="14sp" />
         </LinearLayout>
     </RelativeLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="50dp">
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLines="2"
-        android:textSize="16sp"
-        android:textColor="#a1a1a1"
-        android:text="新疆维吾尔自治区人民政府在乌鲁木齐联合召开内地高校"/>
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textSize="16sp"
+            android:textColor="#a1a1a1"
+            android:text="新疆维吾尔自治区人民政府在乌鲁木齐联合召开内地高校"/>
+    </LinearLayout>
 </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -168,7 +175,6 @@
                     android:text="加好友"/>
 
             </LinearLayout>
-            <View style="@style/SLine"/>
         </LinearLayout>
         <View style="@style/Line"/>
     </LinearLayout>

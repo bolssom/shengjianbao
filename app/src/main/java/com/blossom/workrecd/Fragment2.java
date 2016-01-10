@@ -156,7 +156,8 @@ public class Fragment2 extends Fragment {
     public void myClick(View v){
         switch (v.getId()){
             case R.id.taoshengjian_01:
-
+                Intent detail = new Intent(mParent.getContext(),DetailActivity.class);
+                startActivity(detail);
                 break;
         }
     }

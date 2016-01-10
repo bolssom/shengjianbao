@@ -13,6 +13,7 @@ import com.blossom.workrecd.View.GridViewForScrollView;
 import com.blossom.workrecd.View.TitleView;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.lidroid.xutils.view.annotation.event.OnItemClick;
 
 public class XuetangActivity extends Activity {
@@ -48,6 +49,15 @@ public class XuetangActivity extends Activity {
             }
         });
 
+    }
+    @OnClick(R.id.toutiao)
+    public void myClick(View v){
+        switch (v.getId()){
+            case R.id.toutiao:
+                Intent newsdetail = new Intent(XuetangActivity.this, NewsdetailActivity.class);
+                startActivity(newsdetail);
+                break;
+        }
     }
     @OnItemClick(R.id.gridview_xuetang)
     public void myItemClick(AdapterView<?> parent,View v,int position,long id){

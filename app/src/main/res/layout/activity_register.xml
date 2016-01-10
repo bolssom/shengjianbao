@@ -2,68 +2,328 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#f2f2f2"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="注册"
-        android:textSize="22dip"
-        android:textColor="#FFFFFF"
-        android:paddingLeft="140dip"
-        android:paddingRight="50dip"
-        android:paddingTop="10dip"
-        />
+    <com.blossom.workrecd.View.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/register_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-android:inputType="text"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:height="40dip"
-        android:hint="用户名"
-        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#f3f3ee" />
 
-    <EditText
-        android:id="@+id/register_passwd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-        android:password="true"
-        android:inputType="textPassword"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:height="40dip"
-        android:hint="密码"
-        />
+    <View style="@style/Line" />
 
-    <EditText
-        android:id="@+id/reregister_passwd"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-        android:password="true"
-android:inputType="textPassword"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:height="40dip"
-        android:hint="确认密码"
-        />
-    <Button
-        android:id="@+id/register_submit"
-        android:layout_width="wrap_content"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/reg_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_01"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/per_icon_04" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_01"
+                    android:background="@color/transparent"
+                    android:text="输入用户名"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+
+            <RelativeLayout
+                android:id="@+id/reg_shouji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_02"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/mima_icon_01" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_02"
+                    android:background="@color/transparent"
+                    android:text="输入手机号"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+
+            <RelativeLayout
+                android:id="@+id/reg_yanzheng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_03"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/mima_icon_02" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_03"
+                    android:background="@color/transparent"
+                    android:text="输入验证码"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/RightIconStyle"
+                    android:background="@drawable/border"
+                    android:text="发送"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+
+            <RelativeLayout
+                android:id="@+id/reg_pass1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_04"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/mima_icon_03" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_04"
+                    android:background="@color/transparent"
+                    android:text="输入密码"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+
+            <RelativeLayout
+                android:id="@+id/reg_pass2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_05"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/mima_icon_03" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_05"
+                    android:background="@color/transparent"
+                    android:text="再次确认密码"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+            <View style="@style/Line" />
+            <RelativeLayout
+                android:id="@+id/reg_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_06"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/mima_icon_01" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_06"
+                    android:background="@color/transparent"
+                    android:text="性别选择"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal" >
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/DyTextStyle"
+                        android:checked="true"
+                        android:text="男" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/DyTextStyle"
+                        android:text="女" /></RadioGroup>
+
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+
+            <RelativeLayout
+                android:id="@+id/reg_nl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_07"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/mima_icon_01" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_07"
+                    android:background="@color/transparent"
+                    android:text="年龄"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+            <RelativeLayout
+                android:id="@+id/reg_sg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_08"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/reg_icon_08" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_08"
+                    android:background="@color/transparent"
+                    android:text="身高"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+            <RelativeLayout
+                android:id="@+id/reg_tz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/reg_icon_09"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/reg_icon_09" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/reg_icon_09"
+                    android:background="@color/transparent"
+                    android:text="体重"
+                    android:textColor="#7b7b7b"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View style="@style/Line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/login_btn"
-        android:height="40dip"
-        android:width="70dip"
-        android:layout_marginTop="60dip"
-        android:text="确定"
-        android:textColor="#FFFFFF"
-        android:textSize="22dip"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp">
 
-        />
-
+        <Button
+            android:id="@+id/user_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_login_bg"
+            android:text="确认修改"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+    </LinearLayout>
 </LinearLayout>

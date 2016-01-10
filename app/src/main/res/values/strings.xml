@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WorkRecd</string>
+    <string name="app_name">生兼包</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -28,4 +28,8 @@
     <string name="title_activity_rijie">日结专区</string>
     <string name="title_activity_xuetang">生兼学堂</string>
     <string name="title_activity_luntan">生兼论坛</string>
+    <string name="title_activity_login">登录</string>
+    <string name="title_activity_mima">找回密码</string>
+    <string name="title_activity_newsdetail">新闻详情</string>
+    <string name="title_activity_detail">企业信息</string>
 </resources>

@@ -1,11 +1,14 @@
 package com.blossom.workrecd.Launcher;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import com.blossom.workrecd.MainActivity;
 import com.blossom.workrecd.R;
 import com.blossom.workrecd.Utils.AnimationUtil;
 
@@ -25,7 +28,12 @@ public class LauncherActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laucher);
-        initView();
+        SharedPreferences sharedPreferences =this.getSharedPreferences("appfirst", this.MODE_WORLD_WRITEABLE);
+        if(sharedPreferences.getBoolean("appfirst",false)){
+            startActivity(new Intent(this, MainActivity.class));
+        }else {
+            initView();
+        }
     }
 
     private void initView() {

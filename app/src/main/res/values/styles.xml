@@ -46,12 +46,12 @@
     <style name="Line">
         <item name="android:background">#ffcccccc</item>
         <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">1.0dip</item>
+        <item name="android:layout_height">1.0px</item>
     </style>
     <style name="SLine">
         <item name="android:background">#ffcccccc</item>
         <item name="android:layout_height">fill_parent</item>
-        <item name="android:layout_width">0.5dip</item>
+        <item name="android:layout_width">0.5px</item>
     </style>
     <style name="DyTextStyle">
         <item name="android:layout_width">wrap_content</item>

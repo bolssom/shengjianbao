@@ -32,7 +32,7 @@
             android:value="GGTAaFGQ1nCW3gDWqG2EM4uK" />
 
         <activity
-            android:name=".Launcher.WellComeActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,7 +51,7 @@
             android:label="@string/title_activity_register" >
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Launcher.WellComeActivity"
             android:label="@string/title_activity_laucher" >
         </activity>
         <activity

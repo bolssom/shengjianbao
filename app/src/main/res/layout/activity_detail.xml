@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dip"
+        android:layout_height="45dip"
         android:background="#fed809"
         android:orientation="horizontal">
 
@@ -14,327 +14,68 @@
             android:id="@+id/left_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+           android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
             android:background="#fed809"
             android:minWidth="30dp"
-            android:paddingLeft="10dp"
+            android:paddingLeft="14dp"
             android:src="@mipmap/title_back_btn" />
 
-       <RadioGroup
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal"
-           android:layout_gravity="center"
-           android:gravity="center_horizontal"
-           android:layout_weight="1">
-           <RadioButton
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:button="@null"
-               android:text="职位信息"
-               android:textSize="20sp"
-               android:textColor="@color/white"/>
-           <RadioButton
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:button="@null"
-               android:text="企业信息"
-               android:textSize="20sp"
-               android:textColor="@color/white"/>
-       </RadioGroup>
+        <RadioGroup
+            android:id="@+id/detail_radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/radiogroup_detail_bg"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_zw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="13dp"
+                android:text="职位信息"
+                android:textColor="@drawable/radiobtn_txt_color"
+                android:textSize="14sp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#ffcccccc"
+                   />
+            <RadioButton
+                android:id="@+id/radio_qy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="15dp"
+                android:paddingLeft="13dp"
+                android:text="企业信息"
+                android:textColor="@drawable/radiobtn_txt_color"
+                android:textSize="14sp" />
+        </RadioGroup>
 
         <ImageButton
             android:id="@+id/right_btn"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_alignParentRight="true"
             android:background="#fed809"
             android:minWidth="30dp"
             android:paddingRight="10dp"
             android:src="@mipmap/daochu" />
-    </LinearLayout>
+    </RelativeLayout>
     <LinearLayout
+        android:id="@+id/layout_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/ilv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/detail_03"
-                android:padding="2dp"
-                android:layout_marginLeft="3dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"/>
-            <LinearLayout
-                android:layout_toRightOf="@+id/ilv"
-                android:layout_toLeftOf="@+id/irv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="山西互联创想科技有限公司"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="22sp"
-                    android:textColor="#727272"/>
-                <View style="@style/Line"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="5dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/zuobiao"
-                        android:layout_marginBottom="3dp"/>
-
-                    <TextView
-                        android:id="@+id/location"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="2dp"
-                        android:paddingLeft="2dp"
-                        android:paddingRight="20dp"
-                        android:text="太原市迎泽西大街与和平路交叉口"
-                        android:textColor="#a1a1a1"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-            </LinearLayout>
-        </RelativeLayout>
-        <View style="@style/Line"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#494441"
-            android:textSize="18sp"
-            android:lineSpacingExtra="3dp"
-            android:padding="20dp"
-            android:text="人类正在太空中苦苦寻找外星人的踪迹，不过至今为止，并未发现任何能够完全确切的证据"/>
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#e0e0e0"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-           <ImageView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_gravity="center"
-               android:layout_marginRight="5dp"
-               android:src="@mipmap/detail_01"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="综合评价"
-                android:layout_marginRight="5dp"
-                android:textColor="#494441"
-                android:textSize="20sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4.2"
-                android:textColor="#eb8720"
-                android:textSize="20sp"/>
-        </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="已收获100条评价"
-            android:layout_centerInParent="true"
-            android:layout_marginRight="5dp"
-            android:textColor="#494441"
-            android:textSize="16sp"/>
-    </RelativeLayout>
-    <View style="@style/Line"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="vertical">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/piv"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="3dp"
-                android:layout_alignParentLeft="true"
-                android:src="@mipmap/touxiang_luntan" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/piv"
-                android:layout_marginLeft="5dp"
-                android:layout_centerVertical="true"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/pname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="15dp"
-                        android:text="张三"
-                        android:textColor="#406585"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:id="@+id/psex"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:src="@mipmap/icon_nv" />
-                </LinearLayout>
-                <TextView
-                    android:id="@+id/pschool"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="信用值 300"
-                    android:textColor="#a1a1a1"
-                    android:textSize="14sp" />
-            </LinearLayout>
-        </RelativeLayout>
-        <TextView
-            android:id="@+id/pingjia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:padding="5dp"
-            android:text="谢谢老板，人很好！希望下次合作。。。。"
-            android:textColor="#474543"
-            android:textSize="16sp" />
-            <TextView
-                android:id="@+id/datetime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:padding="2dp"
-                android:text="发布于2016-01-01"
-                android:textColor="#a1a1a1"
-                android:textSize="12sp" />
-
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#e0e0e0"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="5dp"
-                android:src="@mipmap/detail_02"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="信息列表"
-                android:layout_marginRight="5dp"
-                android:textColor="#494441"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="已累计发布9999条信息"
-            android:layout_centerInParent="true"
-            android:textColor="#494441"
-            android:textSize="16sp"/>
-    </RelativeLayout>
-        <View style="@style/Line"/>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="2dp"
-                android:text="活动主持人/兼职"
-                android:textColor="#a1a1a1"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toLeftOf="@+id/dw_price"
-                android:paddingLeft="10dp"
-                android:text="￥300"
-                android:textColor="#ffc50a"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/dw_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/riv"
-                android:layout_centerInParent="true"
-                android:paddingTop="5dp"
-                android:text="/天"
-                android:textColor="#a1a1a1"
-                android:layout_marginRight="10dp"
-                android:textSize="20sp" />
-            <ImageView
-                android:id="@+id/riv"
-                style="@style/RightIconStyle"
-                android:src="@mipmap/youjiantou" />
-        </RelativeLayout>
-        <View style="@style/Line"/>
-
 </LinearLayout>

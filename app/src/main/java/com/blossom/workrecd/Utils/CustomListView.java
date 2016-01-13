@@ -334,11 +334,23 @@ public class CustomListView extends ListView implements OnScrollListener {
 		}
 	}
 	
-	public void onLoadComplete() {
+//	public void onLoadComplete() {
+////		moreView.setVisibility(View.GONE);
+//		moreProgressBar.setVisibility(View.GONE);
+//		xia.setVisibility(View.VISIBLE);
+//		loadMoreView.setText(getContext().getString(R.string.more_data));
+//	}
+	public void onLoadComplete(boolean flag) {
 //		moreView.setVisibility(View.GONE);
-		moreProgressBar.setVisibility(View.GONE);
-		xia.setVisibility(View.VISIBLE);
-		loadMoreView.setText(getContext().getString(R.string.more_data));
+		if (flag){
+			moreProgressBar.setVisibility(View.GONE);
+			xia.setVisibility(View.VISIBLE);
+			loadMoreView.setText(getContext().getString(R.string.load_more));
+		}else{
+			moreProgressBar.setVisibility(View.GONE);
+			xia.setVisibility(View.INVISIBLE);
+			loadMoreView.setText(getContext().getString(R.string.more_data));
+		}
 	}
 
 	private void onRefresh() {

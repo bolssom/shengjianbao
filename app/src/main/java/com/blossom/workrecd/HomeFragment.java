@@ -17,10 +17,9 @@ import android.widget.LinearLayout;
 
 import com.blossom.workrecd.Adapter.JianZhiAdapter;
 import com.blossom.workrecd.ContactList.CitylistActivity;
-import com.blossom.workrecd.Dao.JFC;
-import com.blossom.workrecd.Dao.JiFaBean;
+import com.blossom.workrecd.Dao.JianZhiBean;
+import com.blossom.workrecd.Dao.TuiJianBean;
 import com.blossom.workrecd.Utils.CustomListView;
-import com.blossom.workrecd.Utils.ToastHelper;
 import com.google.gson.Gson;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
@@ -60,7 +59,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     private ImageView home_dingyue;
     private Button btn_rjzq,btn_sjxt,btn_rmzx;
 
-    private ArrayList<JFC> mList = new ArrayList<JFC>();
+    private ArrayList<JianZhiBean> mList = new ArrayList<JianZhiBean>();
     private JianZhiAdapter mAdapter;
 
     private Handler handler = new Handler() {
@@ -68,34 +67,33 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             switch (msg.what) {
                 case WHAT_DID_LOAD_DATA:
                     if (msg.obj != null) {
-                        JiFaBean jfdata = (JiFaBean) msg.obj;
-                        mList.addAll(jfdata.getData());
+                        TuiJianBean tjdata = (TuiJianBean) msg.obj;
+                        mList.addAll(tjdata.getData());
                        // System.out.println("load--->" + mList + "/n");
                         mAdapter.notifyDataSetChanged();
                     }
                     break;
                 case WHAT_DID_REFRESH:
                     if (mAdapter != null) {
-                        JiFaBean jfdata = (JiFaBean) msg.obj;
+                        TuiJianBean tjdata = (TuiJianBean) msg.obj;
                         mList.clear();
-                        mList.addAll(jfdata.getData());
+                        mList.addAll(tjdata.getData());
                        // System.out.println("refresh--->" + mList);
                         mAdapter.notifyDataSetChanged();
                     }
                     mListView.onRefreshComplete();//下拉刷新完成
                     break;
                 case WHAT_DID_MORE:
-                    if (mAdapter != null) {
-                        JiFaBean jfdata = (JiFaBean) msg.obj;
-                        mList.addAll(jfdata.getData());
-                       // System.out.println("=======" + jfdata.getData().get(0).getId());
+                    if (msg.obj != null) {
+                        TuiJianBean tjdata = (TuiJianBean) msg.obj;
+                        mList.addAll(tjdata.getData());
+                       //System.out.println("more=======" + tjdata.getData().get(0).getAddrCode());
                         mAdapter.notifyDataSetChanged();
+                        mListView.onLoadComplete(true);
+                    }else{
+                        mAdapter.notifyDataSetChanged();
+                        mListView.onLoadComplete(false);//加载完毕
                     }
-                    mListView.onLoadComplete();//加载更多完成
-//                    }else{
-//                        mAdapter.notifyDataSetChanged();
-//                        mListView.onLoadMoreComplete(false);//加载完毕
-//                    }
                     break;
                 default:
                     break;
@@ -170,58 +168,83 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     //初始化页面
     public void initdata() {
         RequestParams params = new RequestParams();
-        params.addQueryStringParameter("flag", "getjifa");
-        String NewPath = CommonUrl.BASE_URL + "?pagenum=" + 0;
-
+        params.addQueryStringParameter("_dc", "1451015677046");
+        params.addQueryStringParameter("start", "0");
+        params.addQueryStringParameter("limit", "10");
+        params.addQueryStringParameter("sort", "[{\"property\":\"dateAdd\",\"direction\":\"DESC\"}]");
         HttpUtils http = new HttpUtils();
         http.configCurrentHttpCacheExpiry(1000 * 10);
-        http.send(HttpRequest.HttpMethod.GET, NewPath, params, new RequestCallBack<String>() {
+        http.send(HttpRequest.HttpMethod.GET, CommonUrl.HOME_URL, params, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
                 jsonstr = responseInfo.result;
+                System.out.println("json------------->"+jsonstr);
                 Gson gson = new Gson();
-                JiFaBean jifainfo = gson.fromJson(jsonstr, JiFaBean.class);
+                TuiJianBean tuijianinfo = gson.fromJson(jsonstr, TuiJianBean.class);
                 Message msg = handler.obtainMessage(WHAT_DID_LOAD_DATA);
-                msg.obj = jifainfo;
+                msg.obj = tuijianinfo;
                 msg.sendToTarget();
             }
 
             @Override
             public void onFailure(HttpException e, String s) {
-
             }
         });
 
     }
+//    public void initdata() {
+//        RequestParams params = new RequestParams();
+//        params.addQueryStringParameter("flag", "getjifa");
+//        String NewPath = CommonUrl.BASE_URL + "?pagenum=" + 0;
+//
+//        HttpUtils http = new HttpUtils();
+//        http.configCurrentHttpCacheExpiry(1000 * 10);
+//        http.send(HttpRequest.HttpMethod.GET, NewPath, params, new RequestCallBack<String>() {
+//            @Override
+//            public void onSuccess(ResponseInfo<String> responseInfo) {
+//                jsonstr = responseInfo.result;
+//                Gson gson = new Gson();
+//                JiFaBean jifainfo = gson.fromJson(jsonstr, JiFaBean.class);
+//                Message msg = handler.obtainMessage(WHAT_DID_LOAD_DATA);
+//                msg.obj = jifainfo;
+//                msg.sendToTarget();
+//            }
+//
+//            @Override
+//            public void onFailure(HttpException e, String s) {
+//
+//            }
+//        });
+//
+//    }
 
     //加载更多
     public void loadmoreData() {
-
         RequestParams params = new RequestParams();
-        params.addQueryStringParameter("flag", "getjifa");
-        //params.addQueryStringParameter("pagenum", pagenum);
-        String NewPath = CommonUrl.BASE_URL + "?pagenum=" + pagenum;
-
-        System.out.println("-------->" + NewPath);
-
+        params.addQueryStringParameter("_dc", "1451015677046");
+        params.addQueryStringParameter("limit", "10");
+        params.addQueryStringParameter("sort", "[{\"property\":\"dateAdd\",\"direction\":\"DESC\"}]");
+        String NewPath = CommonUrl.BASE_URL + "?start=" + pagenum*10;
         HttpUtils http = new HttpUtils();
         http.configCurrentHttpCacheExpiry(1000 * 10);
-        http.send(HttpRequest.HttpMethod.GET, NewPath, params, new RequestCallBack<String>() {
+        http.send(HttpRequest.HttpMethod.GET, CommonUrl.HOME_URL, params, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
                 jsonstr = responseInfo.result;
                 Gson gson = new Gson();
-                JiFaBean jifainfo = gson.fromJson(jsonstr, JiFaBean.class);
-                System.out.println("loadmore=======" + jifainfo.getData().get(0).getId());
+               TuiJianBean tuijianinfo = gson.fromJson(jsonstr, TuiJianBean.class);
+                //System.out.println("loadmore=======" + tuijianinfo.getData().get(0).getRecruitTitle());
                 Message msg = handler.obtainMessage(WHAT_DID_MORE);
-                msg.obj = jifainfo;
+                msg.obj = tuijianinfo;
                 msg.sendToTarget();
                 ++pagenum;
             }
 
             @Override
             public void onFailure(HttpException e, String s) {
-
+                Message msg = handler.obtainMessage(WHAT_DID_MORE);
+                msg.obj = null;
+                msg.sendToTarget();
             }
         });
 
@@ -230,18 +253,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     //下拉刷新获取数据
     public void Datarefresh() {
         RequestParams params = new RequestParams();
-        params.addQueryStringParameter("flag", "getjifa");
-        String NewPath = CommonUrl.BASE_URL + "?pagenum=" + 0;
+        params.addQueryStringParameter("_dc", "1451015677046");
+        params.addQueryStringParameter("start", "0");
+        params.addQueryStringParameter("limit", "10");
+        params.addQueryStringParameter("sort", "[{\"property\":\"dateAdd\",\"direction\":\"DESC\"}]");
         HttpUtils http = new HttpUtils();
         http.configCurrentHttpCacheExpiry(1000 * 10);
-        http.send(HttpRequest.HttpMethod.GET, NewPath, params, new RequestCallBack<String>() {
+        http.send(HttpRequest.HttpMethod.GET, CommonUrl.HOME_URL, params, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
                 jsonstr = responseInfo.result;
                 Gson gson = new Gson();
-                JiFaBean jifainfo = gson.fromJson(jsonstr, JiFaBean.class);
+                TuiJianBean tuijianinfo = gson.fromJson(jsonstr, TuiJianBean.class);
                 Message msg = handler.obtainMessage(WHAT_DID_REFRESH);
-                msg.obj = jifainfo;
+                msg.obj = tuijianinfo;
                 //System.out.println("测试--->"+jifainfo.getData().get(0).getAuthor_name());
                 msg.sendToTarget();
             }

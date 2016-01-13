@@ -7,20 +7,20 @@
     <ImageView
         android:id="@+id/home_dingyue"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="116dp"
         android:layout_gravity="center"
         android:background="@color/transparent"
-      android:scaleType="centerCrop"
+        android:scaleType="centerCrop"
         android:src="@mipmap/default_top_pic" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="4dp"
         android:background="#d4d4d4" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="86dp"
         android:orientation="horizontal">
 
         <Button
@@ -29,12 +29,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/buttonstyle"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
             android:drawableTop="@mipmap/h_rjzq"
-            android:padding="4dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="16dp"
             android:text="日结专区"
             android:textColor="#a1a1a1"
-            android:textSize="18sp" />
+            android:textSize="17sp" />
 
         <Button
             android:id="@+id/btn_sjxt"
@@ -42,12 +43,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/buttonstyle"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
             android:drawableTop="@mipmap/h_sjxt"
-            android:padding="4dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="16dp"
             android:text="生兼学堂"
             android:textColor="#a1a1a1"
-            android:textSize="18sp" />
+            android:textSize="17sp" />
 
         <Button
             android:id="@+id/btn_rmzx"
@@ -55,49 +57,49 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
             android:drawableTop="@mipmap/h_rmjx"
-            android:padding="4dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="16dp"
             android:text="热门资讯"
             android:textColor="#a1a1a1"
-            android:textSize="18sp" />
+            android:textSize="17sp" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="4dp"
         android:background="#d4d4d4" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="horizontal"
-        android:padding="6dp"
-
-        >
+        android:layout_height="40dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:src="@mipmap/bang" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center_vertical"
             android:text="推荐兼职"
             android:textColor="#a1a1a1"
-            android:textSize="18sp" />
+            android:textSize="17sp" />
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
         android:background="#d4d4d4" />
 </LinearLayout>

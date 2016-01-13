@@ -8,9 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.blossom.workrecd.Dao.JFC;
+import com.blossom.workrecd.Dao.JianZhiBean;
 import com.blossom.workrecd.R;
-import com.blossom.workrecd.Utils.DateUtils;
 
 import java.util.List;
 
@@ -19,14 +18,14 @@ import java.util.List;
  */
 public class JianZhiAdapter extends BaseAdapter {
     //private LayoutInflater mInflater;
-    private List<JFC> mList;
+    private List<JianZhiBean> mList;
     private Context context;
 //    public JianZhiAdapter(Context context List<JianZhiBean> mList){
 //        mInflater = LayoutInflater.from(context);
 //    }
 
 
-    public JianZhiAdapter(List<JFC> mList, Context context) {
+    public JianZhiAdapter(List<JianZhiBean> mList, Context context) {
         super();
         this.mList = mList;
         this.context = context;
@@ -56,29 +55,29 @@ public class JianZhiAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = LayoutInflater.from(context).inflate(R.layout.list_item_jianzhi,null);
             holder = new ViewHolder();
-            holder.name = (TextView)convertView.findViewById(R.id.name);
-            holder.location = (TextView)convertView.findViewById(R.id.location);
+            holder.title = (TextView)convertView.findViewById(R.id.rtitle);
+            holder.address = (TextView)convertView.findViewById(R.id.addrcode);
             holder.datetime = (TextView)convertView.findViewById(R.id.datetime);
-            holder.price = (TextView)convertView.findViewById(R.id.price);
+            holder.money = (TextView)convertView.findViewById(R.id.money);
             convertView.setTag(holder);
 
         }else {
             holder =(ViewHolder)convertView.getTag();
         }
 
-        holder.name.setText(mList.get(position).getAuthor_name());
-        // holder.location.setText(mList.get(position).getLocation());
-        DateUtils dateUtils = new DateUtils();
-        holder.datetime.setText( dateUtils.timet(mList.get(position).getAddtime()));
-        holder.price.setText(Html.fromHtml("<font color='#ffc50a'>￥" + mList.get(position).getId() + "</font>"));
+        holder.title.setText(mList.get(position).getRecruitTitle());
+        holder.address.setText(mList.get(position).getAddrCode());
+       // DateUtils dateUtils = new DateUtils();
+        holder.datetime.setText( mList.get(position).getDateBegin());
+        holder.money.setText(Html.fromHtml("<font color='#ffc50a'>￥" + mList.get(position).getMoneyStandard() + "</font>"));
         return convertView;
     }
 
     public static class ViewHolder {
-        private TextView name;
-        private TextView location;
+        private TextView title;
+        private TextView address;
         private TextView datetime;
-        private TextView price;
+        private TextView money;
 
     }
 

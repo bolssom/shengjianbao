@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#fefefe"
+    android:background="#ffffff"
     android:orientation="vertical">
 
     <com.blossom.workrecd.View.TitleView
@@ -13,20 +13,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:background="#f9f9f9"
         android:orientation="vertical">
 
         <RelativeLayout
             android:id="@+id/zhiding_01"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:descendantFocusability="blocksDescendants"
+            android:layout_height="40dp"
             android:focusable="true">
 
             <ImageView
                 android:id="@+id/dy_icon_01"
-                android:layout_width="36dp"
-                android:layout_height="38dp"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="8dp"
+                android:layout_centerVertical="true"
                 android:src="@mipmap/shuben" />
 
             <TextView
@@ -36,7 +38,7 @@
                 android:layout_toRightOf="@id/dy_icon_01"
                 android:text="这里是话题置顶区域"
                 android:textColor="#606060"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
 
             <ImageView
@@ -49,15 +51,15 @@
         <RelativeLayout
             android:id="@+id/zhiding_02"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:descendantFocusability="blocksDescendants"
+            android:layout_height="40dp"
             android:focusable="true">
 
             <ImageView
                 android:id="@+id/dy_icon_02"
-                android:layout_width="36dp"
-                android:layout_height="38dp"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="8dp"
+                android:layout_centerVertical="true"
                 android:src="@mipmap/shuben" />
 
             <TextView
@@ -67,7 +69,7 @@
                 android:layout_toRightOf="@id/dy_icon_02"
                 android:text="这里是话题置顶区域"
                 android:textColor="#606060"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
 
             <ImageView

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#fed809"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingLeft="13dp"
+            android:src="@mipmap/title_back_btn" />
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/Text.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:paddingLeft="-15dp"
+            android:text="话题讨论" />
+
+    </LinearLayout>
+
+    <include layout="@layout/item_luntan" />
+
+    <include layout="@layout/item_huifulist" />
+
+    <include layout="@layout/item_huifulist" />
+
+    <include layout="@layout/item_huifulist" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_huifu"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="11dp"
+                android:layout_marginRight="7dp"
+                android:layout_weight="0.2"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center_vertical"
+                android:hint="在这里输入要发布的内容"
+                android:paddingLeft="10dp"
+                android:textColorHint="#cfcfcf"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.8"
+                android:background="@drawable/btn_huifu_bg"
+                android:text="回复"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

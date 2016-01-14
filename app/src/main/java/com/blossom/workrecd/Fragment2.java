@@ -29,8 +29,8 @@ public class Fragment2 extends Fragment {
     private FragmentActivity mActivity;
     private ExpandTabView expandTabView;
     private ArrayList<View> mViewArray = new ArrayList<View>();
-    private ViewMid1  viewMid1;
-    private ViewLeft  viewLeft;
+    private ViewMid1 viewMid1;
+    private ViewLeft viewLeft;
     private ViewMid2 viewMid2;
     private ViewRight viewRight;
 
@@ -65,7 +65,7 @@ public class Fragment2 extends Fragment {
         mtitleview.setLeftImageButton(new TitleView.OnLeftImageButtonClickLister() {
             @Override
             public void onClick(View button) {
-                ( (MainActivity)getActivity()).setTab(0);
+                ((MainActivity) getActivity()).setTab(0);
             }
         });
         mtitleview.setRightImageButton(new TitleView.OnRightImageButtonClickLister() {
@@ -77,7 +77,8 @@ public class Fragment2 extends Fragment {
         });
 
     }
-    private  void  initValue(){
+
+    private void initValue() {
         mViewArray.add(viewLeft);
         mViewArray.add(viewMid1);
         mViewArray.add(viewMid2);
@@ -90,10 +91,11 @@ public class Fragment2 extends Fragment {
         expandTabView.setValue(mTextArray, mViewArray);
         expandTabView.setTitle(mTextArray.get(0), 0);
         expandTabView.setTitle(mTextArray.get(1), 1);
-        expandTabView.setTitle(mTextArray.get(2),2);
+        expandTabView.setTitle(mTextArray.get(2), 2);
         expandTabView.setTitle(mTextArray.get(3), 3);
     }
-    private  void initListener(){
+
+    private void initListener() {
         viewLeft.setOnSelectListener(new ViewLeft.OnSelectListener() {
             @Override
             public void getValue(String showText) {
@@ -123,25 +125,34 @@ public class Fragment2 extends Fragment {
         });
     }
 
-    private void onRefresh(View view,String showText){
+    private void onRefresh(View view, String showText) {
         expandTabView.onPressBack();
         int position = getPosition(view);
         if (position >= 0 && !expandTabView.getTitle(position).equals(showText)) {
             expandTabView.setTitle(showText, position);
         }
         //Toast.makeText(MainActivity.this, showText, Toast.LENGTH_SHORT).show();
-        ToastHelper.show(mParent.getContext(), showText);
+        ToastHelper.show(mParent.getContext(), showText+position);
+        Intent intent = new Intent(mParent.getContext(), ErrorActivity.class);
+        if (position == 1) {
+            intent.putExtra("flag", "nosearch");
+        } else {
+            intent.putExtra("flag", "nodata");
+        }
+        startActivity(intent);
+
     }
-    private int getPosition(View tView){
-        for (int i = 0;i < mViewArray.size();i++){
-            if (mViewArray.get(i) == tView){
+
+    private int getPosition(View tView) {
+        for (int i = 0; i < mViewArray.size(); i++) {
+            if (mViewArray.get(i) == tView) {
                 return i;
             }
         }
         return -1;
     }
 
-//    public void onBackPressed(){
+    //    public void onBackPressed(){
 //        if (!expandTabView.onPressBack()){
 //            mActivity.finish();
 //        }
@@ -152,11 +163,12 @@ public class Fragment2 extends Fragment {
         if (this.getView() != null)
             this.getView().setVisibility(menuVisible ? View.VISIBLE : View.GONE);
     }
+
     @OnClick(R.id.taoshengjian_01)
-    public void myClick(View v){
-        switch (v.getId()){
+    public void myClick(View v) {
+        switch (v.getId()) {
             case R.id.taoshengjian_01:
-                Intent detail = new Intent(mParent.getContext(),DetailActivity.class);
+                Intent detail = new Intent(mParent.getContext(), DetailActivity.class);
                 startActivity(detail);
                 break;
         }

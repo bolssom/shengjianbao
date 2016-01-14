@@ -17,7 +17,7 @@
         android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:background="@mipmap/maintab_toolbar_bg">
+        android:background="@drawable/tab_bg">
 
         <RadioButton
             android:id="@+id/radio_button0"

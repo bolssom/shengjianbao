@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.blossom.workrecd.View.TitleView;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 
 /**
@@ -58,7 +59,15 @@ public class Fragment3 extends Fragment {
         });
 
     }
-
+    @OnClick({R.id.zhiding_01})
+    public void myClick(View v){
+        switch (v.getId()){
+            case R.id.zhiding_01:
+                Intent intent = new Intent(mParent.getContext(),HuatiActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
     @Override
     public void setMenuVisibility(boolean menuVisible) {
         super.setMenuVisibility(menuVisible);

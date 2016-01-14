@@ -106,7 +106,15 @@
         </activity>
         <activity
             android:name=".DetailActivity"
-            android:label="@string/title_activity_detail">
+            android:label="@string/title_activity_detail" >
+        </activity>
+        <activity
+            android:name=".ErrorActivity"
+            android:label="@string/title_activity_error" >
+        </activity>
+        <activity
+            android:name=".HuatiActivity"
+            android:label="@string/title_activity_huati" >
         </activity>
     </application>
 

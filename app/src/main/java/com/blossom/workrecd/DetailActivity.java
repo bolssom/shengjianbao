@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -64,6 +65,26 @@ private LinearLayout xianzaibaoming;
 
     }
 
+    private void  dialog_success(){
+        LayoutInflater inflater = LayoutInflater.from(this);
+        RelativeLayout layout = (RelativeLayout)inflater.inflate(R.layout.dialog_sucess,null);
+
+        AlertDialog adialog = new AlertDialog.Builder(DetailActivity.this).create();
+        adialog.show();
+        adialog.setContentView(layout);
+
+        Window dialogWindow = adialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        dialogWindow.setBackgroundDrawableResource(android.R.color.transparent);
+        dialogWindow.setGravity(Gravity.CENTER);
+       // lp.x = 10; // 新位置X坐标
+       // lp.y = 345; // 新位置Y坐标
+        lp.width = 600; // 宽度
+        lp.height = 480; // 高度
+        dialogWindow.setAttributes(lp);
+
+    }
+
     private void customdialog() {
         LayoutInflater inflaterDl = LayoutInflater.from(this);
         RelativeLayout layout = (RelativeLayout)inflaterDl.inflate(R.layout.dialog_detail, null );
@@ -72,6 +93,9 @@ private LinearLayout xianzaibaoming;
         final Dialog dialog = new AlertDialog.Builder(DetailActivity.this).create();
         dialog.show();
         dialog.getWindow().setContentView(layout);
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setBackgroundDrawableResource(android.R.color.transparent);
+        dialogWindow.setGravity(Gravity.CENTER);
         dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 
@@ -92,7 +116,9 @@ private LinearLayout xianzaibaoming;
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "ok", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "ok", Toast.LENGTH_SHORT).show();
+                dialog_success();
+                dialog.dismiss();
             }
         });
 

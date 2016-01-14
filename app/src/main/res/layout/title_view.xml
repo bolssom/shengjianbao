@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dip"
+    android:layout_height="45dip"
     android:background="#fed809"
     android:orientation="horizontal">
 
@@ -12,7 +12,7 @@
         android:layout_gravity="center_vertical"
        android:src="@mipmap/title_back_btn"
         android:background="#fed809"
-        android:paddingLeft="10dp"
+        android:paddingLeft="13dp"
         android:minWidth="30dp" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:background="#fed809"
-        android:paddingRight="10dp"
+        android:paddingRight="12dp"
         android:src="@mipmap/home_right_btn" />
 
 </LinearLayout>

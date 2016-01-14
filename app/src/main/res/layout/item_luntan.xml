@@ -1,181 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/piv"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="3dp"
-            android:layout_alignParentLeft="true"
-            android:src="@mipmap/touxiang_luntan" />
-
-        <TextView
-            android:id="@+id/pname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="15dp"
-            android:layout_toRightOf="@+id/piv"
-            android:text="张三"
-            android:textColor="#406585"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/psex"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:layout_toRightOf="@+id/pname"
-            android:src="@mipmap/icon_nv" />
-
-        <TextView
-            android:id="@+id/pschool"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/psex"
-            android:text="山西财经大学"
-            android:textColor="#a1a1a1"
-            android:textSize="14sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/shijian" />
-
-            <TextView
-                android:id="@+id/datetime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingLeft="2dp"
-                android:text="2016-01-01"
-                android:textColor="#a1a1a1"
-                android:textSize="14sp" />
-        </LinearLayout>
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="5dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="2"
-            android:textSize="16sp"
-            android:textColor="#a1a1a1"
-            android:text="新疆维吾尔自治区人民政府在乌鲁木齐联合召开内地高校"/>
-    </LinearLayout>
-</LinearLayout>
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <View style="@style/Line"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/piv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:src="@mipmap/touxiang_luntan" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@+id/piv"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/pname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="6dp"
+                            android:text="张三"
+                            android:textColor="#406585"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/psex"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="6dp"
+                            android:src="@mipmap/icon_nv" />
+
+                        <TextView
+                            android:id="@+id/pschool"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="山西财经大学"
+                            android:textColor="#a1a1a1"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dp"
+                            android:src="@mipmap/shijian" />
+
+                        <TextView
+                            android:id="@+id/datetime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="2016-01-01"
+                            android:textColor="#a1a1a1"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="11dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:text="新疆维吾尔自治区人民政府在乌鲁木齐联合召开内地高校"
+                        android:textColor="#a1a1a1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View style="@style/Line" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="6dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1">
+                android:orientation="horizontal"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_luntan_01"/>
+                    android:src="@mipmap/icon_luntan_01" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="32"/>
+                    android:layout_marginLeft="6dp"
+                    android:text="32" />
 
             </LinearLayout>
-            <View style="@style/SLine"/>
+
+            <View style="@style/SLine" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="6dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1">
+                android:orientation="horizontal"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_luntan_02"/>
+                    android:src="@mipmap/icon_luntan_02" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="66"/>
+                    android:text="66" />
 
             </LinearLayout>
-            <View style="@style/SLine"/>
+
+            <View style="@style/SLine" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="6dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1">
+                android:orientation="horizontal"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_luntan_03"/>
+                    android:src="@mipmap/icon_luntan_03" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="105"/>
+                    android:text="105" />
 
             </LinearLayout>
-            <View style="@style/SLine"/>
+
+            <View style="@style/SLine" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="6dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1">
+                android:orientation="horizontal"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_luntan_04"/>
+                    android:src="@mipmap/icon_luntan_04" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="加好友"/>
+                    android:layout_gravity="center"
+                    android:text="加好友"
+                    android:textSize="12dp"/>
 
             </LinearLayout>
         </LinearLayout>
-        <View style="@style/Line"/>
+
+        <View style="@style/Line" />
     </LinearLayout>
 </LinearLayout>

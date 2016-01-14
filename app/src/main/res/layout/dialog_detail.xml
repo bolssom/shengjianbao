@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="37dp"
+    android:layout_marginRight="37dp"
+    android:layout_marginTop="78dp"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/rl_dialog_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_custom_dialog">
+
+        <TextView
+            android:id="@+id/dialog_price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="$100元/天"
+            android:textColor="#FF9C00"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_price"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="名称：招聘农夫山泉促销"
+            android:textColor="#747474"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:id="@+id/shijian_iv"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/dialog_title"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentLeft="true"
+                   android:layout_centerVertical="true"
+                   android:layout_toLeftOf="@+id/sj"
+                   android:layout_marginRight="8dp"
+                   android:src="@mipmap/xian1" />
+               <ImageView
+                   android:id="@+id/sj"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@mipmap/shijian"
+                  android:layout_centerInParent="true"/>
+           </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/dialog_shijian"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shijian_iv"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="时间：2015.01.01-02.15"
+            android:textColor="#747474"
+            android:textSize="16dp" />
+        <LinearLayout
+            android:id="@+id/weizhi_iv"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/dialog_shijian"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/wz"
+                    android:src="@mipmap/xian2" />
+                <ImageView
+                    android:id="@+id/wz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/zuobiao"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/dialog_dizhi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weizhi_iv"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="地址：太原市长治路888号"
+            android:textColor="#747474"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/dialog_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_dizhi"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/dialog_edit_bg"
+            android:hint="给商家留言（最多140个字）"
+            android:minHeight="60dp"
+            android:textColor="#D2D2D2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/dialog_tishi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_edit"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="温馨提示：生兼包为您提供的服务均为免费，若企业以任何理由向您收取费用，请立即向我门的平台举报。"
+            android:textColor="#FF9C00"
+            android:textSize="10sp" />
+
+        <LinearLayout
+            android:id="@+id/duigou"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_tishi"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/duigou" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/fuwuxieyi"
+                android:textColor="#2C2B2B"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/dialog_ok"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/duigou"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_login_bg"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/dialog_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@mipmap/close" />
+</RelativeLayout>

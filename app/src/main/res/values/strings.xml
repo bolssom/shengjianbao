@@ -32,4 +32,5 @@
     <string name="title_activity_mima">找回密码</string>
     <string name="title_activity_newsdetail">新闻详情</string>
     <string name="title_activity_detail">企业信息</string>
+    <string name="fuwuxieyi">我已同意生兼包的<u>《生兼包兼职服务协议》</u></string>
 </resources>

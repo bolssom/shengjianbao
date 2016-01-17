@@ -8,10 +8,10 @@
     <color name="blue">#005df6</color>
     <color name="white">#ffffff</color>
     <color name="gray">#666666</color>
-    <color name="line">#efefef</color>
+    <color name="line">#ffcccccc</color>
     <color name="lv">#cae297</color>
     <color name="comment_yell">#e3bb16</color>
-
+    <color name="huitext">#747474</color>
     <color name="popup_main_background">#b0000000</color>
     <color name="choose_eara_item_press_color">#f4f4f4</color>
 

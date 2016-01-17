@@ -59,12 +59,20 @@ public class Fragment3 extends Fragment {
         });
 
     }
-    @OnClick({R.id.zhiding_01})
+    @OnClick({R.id.zhiding_01,R.id.zhiding_02,R.id.tianjiahaoyou})
     public void myClick(View v){
         switch (v.getId()){
             case R.id.zhiding_01:
                 Intent intent = new Intent(mParent.getContext(),HuatiActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.zhiding_02:
+                Intent intent1 = new Intent(mParent.getContext(),FabuActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.tianjiahaoyou:
+                Intent intent2 = new Intent(mParent.getContext(),TianjiafriendActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

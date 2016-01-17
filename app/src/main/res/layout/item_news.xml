@@ -6,16 +6,18 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="4dp"
+        android:layout_height="60dp">
         <TextView
             android:id="@+id/news_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/news_pic"
             android:gravity="left"
+            android:layout_marginBottom="5dp"
             android:maxLines="2"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
             android:text="CES展虚拟现实技术狂欢赏鉴 五年内必成气候"
             android:textColor="#222222"
             android:textSize="14sp" />
@@ -26,7 +28,6 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:paddingRight="3dp"
             android:src="@mipmap/newspei" />
     </RelativeLayout>
 </LinearLayout>

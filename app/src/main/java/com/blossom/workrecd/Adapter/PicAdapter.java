@@ -45,7 +45,7 @@ public class PicAdapter extends BaseAdapter {
             imageView.setLayoutParams(new GridView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));//设置ImageView对象布局
             imageView.setAdjustViewBounds(false);//设置边界对齐
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);//设置刻度的类型
-            imageView.setPadding(25, 25, 25, 25);//设置间距
+            imageView.setPadding(0, 20, 0, 20);//设置间距
         }
         else {
             imageView = (ImageView) convertView;

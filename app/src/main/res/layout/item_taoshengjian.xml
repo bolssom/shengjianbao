@@ -4,15 +4,17 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/taoshengjian_01"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="15dp">
         <ImageView
             android:id="@+id/ilv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/paisong"
-            android:padding="2dp"
-            android:layout_marginLeft="3dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"/>
         <LinearLayout
@@ -21,13 +23,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="这里是信息标题名称"
-                android:textSize="18sp"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"
                 android:textColor="#8c8c8c"/>
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -40,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:text="￥199"
                     android:textColor="#ff9b00"
-                    android:textSize="22sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/dw_price"
@@ -50,7 +54,7 @@
                     android:paddingTop="5dp"
                     android:text="/天"
                     android:textColor="#bababa"
-                    android:textSize="18sp" />
+                    android:textSize="10sp" />
 
             </RelativeLayout>
             <LinearLayout
@@ -63,36 +67,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/zuobiao"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="3dp"/>
+                    android:layout_marginRight="3dp"
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="2dp"
-                    android:paddingLeft="2dp"
-                    android:paddingRight="20dp"
+                    android:layout_gravity="center_vertical"
                     android:text="小店区"
                     android:textColor="#a1a1a1"
-                    android:textSize="14sp" />
+                    android:layout_marginRight="10dp"
+                    android:textSize="10sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
                     android:src="@mipmap/shijian" />
 
                 <TextView
                     android:id="@+id/datetime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="2dp"
-                    android:paddingLeft="2dp"
+                    android:layout_gravity="center_vertical"
                     android:text="1分钟前"
                     android:textColor="#a1a1a1"
-                    android:textSize="14sp" />
+                    android:textSize="10sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -102,7 +103,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
             android:src="@mipmap/youjiantou"/>
     </RelativeLayout>
 </LinearLayout>

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
+import com.blossom.workrecd.JianzhiFragment.JianzhiActivity;
 import com.blossom.workrecd.Login.LoginActivity;
 import com.blossom.workrecd.View.GridViewForScrollView;
 import com.blossom.workrecd.View.TitleView;
@@ -93,14 +94,37 @@ public class Fragment4 extends Fragment {
         }
         return data_list;
     }
-    @OnClick(R.id.person_login)
-    public void myClick(View v){
-        switch (v.getId()){
-            case R.id.person_login:
-                Intent login= new Intent(myPartent.getContext(),LoginActivity.class);
+
+    @OnClick({R.id.piv, R.id.baoming,R.id.luyong,R.id.wancheng,R.id.daipingjia})
+    public void myClick(View v) {
+        switch (v.getId()) {
+            case R.id.piv:
+                Intent login = new Intent(myPartent.getContext(), LoginActivity.class);
                 startActivity(login);
-                break;}
+                break;
+            case R.id.baoming:
+                Intent bm= new Intent(myPartent.getContext(),JianzhiActivity.class);
+                bm.putExtra("flag","0");
+                startActivity(bm);
+                break;
+            case R.id.luyong:
+                Intent ly= new Intent(myPartent.getContext(),JianzhiActivity.class);
+                ly.putExtra("flag","1");
+                startActivity(ly);
+                break;
+            case R.id.wancheng:
+                Intent wc= new Intent(myPartent.getContext(),JianzhiActivity.class);
+                wc.putExtra("flag","2");
+                startActivity(wc);
+                break;
+            case R.id.daipingjia:
+                Intent pj= new Intent(myPartent.getContext(),JianzhiActivity.class);
+                pj.putExtra("flag","3");
+                startActivity(pj);
+                break;
+        }
     }
+
     @Override
     public void setMenuVisibility(boolean menuVisible) {
         super.setMenuVisibility(menuVisible);

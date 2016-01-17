@@ -35,4 +35,11 @@
     <string name="fuwuxieyi">我已同意生兼包的<u>《生兼包兼职服务协议》</u></string>
     <string name="title_activity_error">ErrorActivity</string>
     <string name="title_activity_huati">话题讨论</string>
+    <string name="title_activity_fabu">发布话题</string>
+    <string name="title_activity_tianjiafriend">添加朋友</string>
+    <string name="title_activity_jianzhi">JianzhiActivity</string>
+    <string name="title_activity_pingjia">评价</string>
+    <string name="title_activity_tousu">投诉</string>
+    <string name="title_activity_baomingquxiao">BaomingquxiaoActivity</string>
+    <string name="title_activity_tiku">题库</string>
 </resources>

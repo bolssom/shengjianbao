@@ -62,5 +62,7 @@ public class XuetangActivity extends Activity {
     @OnItemClick(R.id.gridview_xuetang)
     public void myItemClick(AdapterView<?> parent,View v,int position,long id){
         ToastHelper.show(this,"点击了-->"+position);
+        Intent tk = new Intent(XuetangActivity.this, TikuActivity.class);
+        startActivity(tk);
     }
 }

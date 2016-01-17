@@ -9,301 +9,471 @@
         android:id="@+id/title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageButton
-            android:id="@+id/person_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:scaleType="centerInside"
-            android:src="@mipmap/grzx" />
-
-        <View style="@style/Line" />
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="3dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="6dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="66"
-                    android:textColor="#e68824" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="已报名" />
-
-            </LinearLayout>
-
-            <View style="@style/SLine" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="6dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="10"
-                    android:textColor="#e68824" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="已录用" />
-
-            </LinearLayout>
-
-            <View style="@style/SLine" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="6dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="5"
-                    android:textColor="#e68824" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="已完成" />
-
-            </LinearLayout>
-
-            <View style="@style/SLine" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="6dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="5"
-                    android:textColor="#e68824" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="待评价" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <View style="@style/Line" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#f2f2f2" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
             android:orientation="vertical">
 
-            <com.blossom.workrecd.View.GridViewForScrollView
-                android:id="@+id/myinfogridview"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:horizontalSpacing="0.0dip"
-                android:listSelector="@null"
-                android:numColumns="3"
-                android:scrollbars="none"
-                android:stretchMode="columnWidth"
-                android:verticalSpacing="0.0dip" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp">
+
+                <ImageView
+                    android:id="@+id/piv"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="13dp"
+                    android:src="@mipmap/touxiang_luntan" />
+
+                <LinearLayout
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/piv"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/pname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="6dp"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:text="智慧包"
+                            android:textColor="#747474"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/psex"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/sibaozi" />
+                    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="5dp">
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="160dp"
+        android:layout_height="12dp"
+        android:layout_weight="0.2"
+        android:max="100"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="fill_vertical"
+        android:progress="30"
+        android:progressDrawable="@drawable/progressbar" />
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:background="@drawable/bg_renzheng"
+        android:layout_weight="0.8"
+        android:layout_gravity="fill_vertical"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:text="去认证"/>
+</LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+                        <RelativeLayout
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentLeft="true"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginRight="5dp"
+                                    android:src="@mipmap/taoxin" />
+
+                                <TextView
+                                    android:id="@+id/xinyong"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="信用值：302"
+                                    android:textColor="#747474"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:src="@mipmap/jifentu" />
+
+                                <TextView
+                                    android:id="@+id/jifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="信用值：302"
+                                    android:textColor="#747474"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
-                <RelativeLayout
-                    android:id="@+id/per_info"
-                    android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/baoming"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:descendantFocusability="blocksDescendants"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:id="@+id/per_icon_01"
-                        android:layout_width="32dp"
-                        android:layout_height="35dp"
-                        android:src="@mipmap/per_icon_01" />
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/per_icon_01"
-                        android:layout_marginLeft="10dp"
-                        android:text="基本资料"
-                        android:textColor="#929292"
-                        android:textSize="16sp" />
+                        android:text="66"
+                        android:textColor="#e68824" />
 
-                    <ImageView
-                        style="@style/RightIconStyle"
-                        android:src="@mipmap/youjiantou" />
-                </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#474747"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="12sp"
+                        android:text="已报名" />
 
-                <View style="@style/Line" />
-                <RelativeLayout
-                    android:id="@+id/zhanneixiaoxi"
-                    android:layout_width="match_parent"
+                </LinearLayout>
+
+                <View style="@style/SLine" />
+
+                <LinearLayout
+                    android:id="@+id/luyong"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:descendantFocusability="blocksDescendants"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:id="@+id/per_icon_02"
-                        android:layout_width="32dp"
-                        android:layout_height="35dp"
-                        android:src="@mipmap/per_icon_02" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/per_icon_02"
-                        android:layout_marginLeft="10dp"
-                        android:text="站内消息"
-                        android:textColor="#929292"
-                        android:textSize="16sp" />
+                        android:text="10"
+                        android:textColor="#e68824" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/xiaoxi"
-                        android:layout_centerVertical="true"
-                        android:gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/yuan_bg"
-                        android:text="5"/>
-                    <ImageView
-                        android:id="@+id/xiaoxi"
-                        style="@style/RightIconStyle"
-                        android:src="@mipmap/youjiantou" />
-                </RelativeLayout>
+                        android:textColor="#474747"
+                        android:textSize="12sp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="已录用" />
 
-                <View style="@style/Line" />
-                <RelativeLayout
-                    android:id="@+id/banben"
-                    android:layout_width="match_parent"
+                </LinearLayout>
+
+                <View style="@style/SLine" />
+
+                <LinearLayout
+                    android:id="@+id/wancheng"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:descendantFocusability="blocksDescendants"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:id="@+id/per_icon_03"
-                        android:layout_width="32dp"
-                        android:layout_height="35dp"
-                        android:src="@mipmap/per_icon_03" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/per_icon_03"
-                        android:layout_marginLeft="10dp"
-                        android:text="新版检测"
-                        android:textColor="#929292"
-                        android:textSize="16sp" />
+                        android:text="5"
+                        android:textColor="#e68824" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/banbenjiatou"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="5dp"
-                        android:text="V 1.0"/>
-                    <ImageView
-                        android:id="@+id/banbenjiatou"
-                        style="@style/RightIconStyle"
-                        android:src="@mipmap/youjiantou" />
-                </RelativeLayout>
+                        android:textColor="#474747"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="12sp"
+                        android:text="已完成" />
 
-                <View style="@style/Line" />
-                <RelativeLayout
-                    android:id="@+id/about"
-                    android:layout_width="match_parent"
+                </LinearLayout>
+
+                <View style="@style/SLine" />
+
+                <LinearLayout
+                    android:id="@+id/daipingjia"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:descendantFocusability="blocksDescendants"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:id="@+id/per_icon_04"
-                        android:layout_width="32dp"
-                        android:layout_height="35dp"
-                        android:src="@mipmap/per_icon_04" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/per_icon_04"
-                        android:layout_marginLeft="10dp"
-                        android:text="基本资料"
-                        android:textColor="#929292"
-                        android:textSize="16sp" />
+                        android:text="5"
+                        android:textColor="#e68824" />
 
-                    <ImageView
-                        style="@style/RightIconStyle"
-                        android:src="@mipmap/youjiantou" />
-                </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="#474747"
+                        android:textSize="12sp"
+                        android:text="待评价" />
 
-                <View style="@style/Line" />
+                </LinearLayout>
+
             </LinearLayout>
 
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+            <View style="@style/Line" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#f2f2f2" />
+            <View style="@style/Line" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <com.blossom.workrecd.View.GridViewForScrollView
+                    android:id="@+id/myinfogridview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="0.0dip"
+                    android:listSelector="@null"
+                    android:numColumns="3"
+                    android:scrollbars="none"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="0.0dip" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="8dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/per_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/per_icon_01"
+                            android:layout_width="25dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/per_icon_01" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/per_icon_01"
+                            android:text="基本资料"
+                            android:textColor="#777777"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            style="@style/RightIconStyle"
+                            android:src="@mipmap/youjiantou" />
+                    </RelativeLayout>
+
+                    <View style="@style/Line" />
+
+                    <RelativeLayout
+                        android:id="@+id/zhanneixiaoxi"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/per_icon_02"
+                            android:layout_width="25dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/per_icon_02" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/per_icon_02"
+                            android:text="站内消息"
+                            android:textColor="#777777"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@+id/xiaoxi"
+                            android:background="@drawable/yuan_bg"
+                            android:gravity="center"
+                            android:text="5" />
+
+                        <ImageView
+                            android:id="@+id/xiaoxi"
+                            style="@style/RightIconStyle"
+                            android:src="@mipmap/youjiantou" />
+                    </RelativeLayout>
+
+                    <View style="@style/Line" />
+
+                    <RelativeLayout
+                        android:id="@+id/banben"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/per_icon_03"
+                            android:layout_width="25dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/per_icon_03" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/per_icon_03"
+                            android:text="新版检测"
+                            android:textColor="#777777"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@+id/banbenjiatou"
+                            android:textColor="#777777"
+                            android:textSize="16sp"
+                            android:text="V 1.0" />
+
+                        <ImageView
+                            android:id="@+id/banbenjiatou"
+                            style="@style/RightIconStyle"
+                            android:src="@mipmap/youjiantou" />
+                    </RelativeLayout>
+
+                    <View style="@style/Line" />
+
+                    <RelativeLayout
+                        android:id="@+id/about"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/per_icon_04"
+                            android:layout_width="25dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/per_icon_04" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/per_icon_04"
+                            android:text="基本资料"
+                            android:textColor="#777777"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            style="@style/RightIconStyle"
+                            android:src="@mipmap/youjiantou" />
+                    </RelativeLayout>
+
+                    <View style="@style/Line" />
+                    <RelativeLayout
+                        android:id="@+id/set"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/per_icon_05"
+                            android:layout_width="25dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/set" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/per_icon_05"
+                            android:text="我的设置"
+                            android:textColor="#777777"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            style="@style/RightIconStyle"
+                            android:src="@mipmap/youjiantou" />
+                    </RelativeLayout>
+
+                    <View style="@style/Line" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

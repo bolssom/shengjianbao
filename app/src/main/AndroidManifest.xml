@@ -116,6 +116,34 @@
             android:name=".HuatiActivity"
             android:label="@string/title_activity_huati" >
         </activity>
+        <activity
+            android:name=".FabuActivity"
+            android:label="@string/title_activity_fabu" >
+        </activity>
+        <activity
+            android:name=".TianjiafriendActivity"
+            android:label="@string/title_activity_tianjiafriend" >
+        </activity>
+        <activity
+            android:name=".JianzhiFragment.JianzhiActivity"
+            android:label="@string/title_activity_jianzhi" >
+        </activity>
+        <activity
+            android:name=".PingjiaActivity"
+            android:label="@string/title_activity_pingjia" >
+        </activity>
+        <activity
+            android:name=".TousuActivity"
+            android:label="@string/title_activity_tousu" >
+        </activity>
+        <activity
+            android:name=".BaomingquxiaoActivity"
+            android:label="@string/title_activity_baomingquxiao" >
+        </activity>
+        <activity
+            android:name=".TikuActivity"
+            android:label="@string/title_activity_tiku" >
+        </activity>
     </application>
 
 </manifest>

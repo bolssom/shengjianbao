@@ -19,14 +19,14 @@
         <TextView
             style="@style/XuetangText"
             android:text="题库"
-            android:padding="6dp"
+            android:gravity="center"
             />
         <View
             style="@style/Line"
             />
         <com.blossom.workrecd.View.GridViewForScrollView
             android:id="@+id/gridview_xuetang"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:numColumns="4"
             android:stretchMode="columnWidth"
@@ -36,13 +36,13 @@
             />
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="9dp"
             android:background="#f2f2f2"
             />
         <TextView
             style="@style/XuetangText"
             android:text="新闻"
-            android:padding="6dp"
+           android:gravity="center"
             />
         <View
             style="@style/Line"
@@ -54,7 +54,7 @@
             android:background="@color/transparent"
             android:src="@mipmap/newspic"
             android:scaleType="centerCrop"
-            android:layout_margin="6dp"/>
+            android:layout_margin="4dp"/>
         <View
             style="@style/Line"
             />

@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 连框颜色值 --><item>
     <shape>
-        <solid android:color="#f5f5f5" />
+        <solid android:color="#ffcccccc" />
     </shape>
 </item>
     <!-- 主体背景颜色值 -->

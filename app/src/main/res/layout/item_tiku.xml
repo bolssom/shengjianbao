@@ -4,7 +4,7 @@
     android:background="@color/white"
     android:layout_height="wrap_content">
     <RelativeLayout
-        android:id="@+id/per_info"
+        android:id="@+id/tiku_title"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginLeft="15dp"

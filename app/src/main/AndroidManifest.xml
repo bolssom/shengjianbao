@@ -144,6 +144,14 @@
             android:name=".TikuActivity"
             android:label="@string/title_activity_tiku" >
         </activity>
+        <activity
+            android:name=".CeshiActivity"
+            android:label="@string/title_activity_ceshi" >
+        </activity>
+        <activity
+            android:name=".RenzhengActivity"
+            android:label="@string/title_activity_renzheng" >
+        </activity>
     </application>
 
 </manifest>

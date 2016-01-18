@@ -42,4 +42,6 @@
     <string name="title_activity_tousu">投诉</string>
     <string name="title_activity_baomingquxiao">BaomingquxiaoActivity</string>
     <string name="title_activity_tiku">题库</string>
+    <string name="title_activity_ceshi">测试题</string>
+    <string name="title_activity_renzheng">实名认证</string>
 </resources>

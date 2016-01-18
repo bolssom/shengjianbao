@@ -2,10 +2,7 @@ package com.blossom.workrecd;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -13,7 +10,6 @@ import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.blossom.workrecd.Adapter.PicAdapter;
 import com.blossom.workrecd.View.TitleView;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -89,12 +85,16 @@ public class TikuActivity extends Activity {
 
     }
 
-    @OnClick(R.id.toutiao)
+    @OnClick({R.id.toutiao,R.id.tiku_title})
     public void myClick(View v) {
         switch (v.getId()) {
             case R.id.toutiao:
                 Intent newsdetail = new Intent(TikuActivity.this, NewsdetailActivity.class);
                 startActivity(newsdetail);
+                break;
+            case R.id.tiku_title:
+                Intent shiti = new Intent(TikuActivity.this, CeshiActivity.class);
+                startActivity(shiti);
                 break;
         }
     }

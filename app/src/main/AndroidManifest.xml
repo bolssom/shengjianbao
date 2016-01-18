@@ -149,8 +149,32 @@
             android:label="@string/title_activity_ceshi" >
         </activity>
         <activity
-            android:name=".RenzhengActivity"
+            android:name=".ziliao.XueshengzhengActivity"
             android:label="@string/title_activity_renzheng" >
+        </activity>
+        <activity
+            android:name=".ziliao.ShenfenrezhengActivity"
+            android:label="@string/title_activity_shenfenrezheng" >
+        </activity>
+        <activity
+            android:name=".ziliao.ZiliaoActivity"
+            android:label="@string/title_activity_ziliao" >
+        </activity>
+        <activity
+            android:name=".ziliao.WrenzhengActivity"
+            android:label="@string/title_activity_wrenzheng" >
+        </activity>
+        <activity
+            android:name=".ziliao.JibenziliaoActivity"
+            android:label="@string/title_activity_jibenziliao" >
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
+        <activity
+            android:name=".TongzhiActivity"
+            android:label="@string/title_activity_tongzhi" >
         </activity>
     </application>
 

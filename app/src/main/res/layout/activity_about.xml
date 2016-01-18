@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fefefe"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#fed809"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/title_back_btn" />
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/Text.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:paddingLeft="-15dp"
+            android:text="关于我们" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/about_logo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#767676"
+                android:text="生兼包"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#767676"
+                android:text="1.0(Android/ios)"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#767676"
+                android:textSize="14sp"
+                android:text="生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长生兼包，你成长"/>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="25dp"
+                android:src="@mipmap/about_logo"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="30dp"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+                android:gravity="bottom">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\@2015生兼包"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#7b765c"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

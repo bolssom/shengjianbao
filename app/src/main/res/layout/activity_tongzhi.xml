@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#fed809"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/title_back_btn" />
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/Text.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:paddingLeft="-15dp"
+            android:text="通知" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        />
+    <include layout="@layout/item_tongzhi"/>
+
+    </LinearLayout>

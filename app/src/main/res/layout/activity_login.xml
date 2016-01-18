@@ -92,18 +92,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center">
-        <ImageButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:src="@mipmap/login_04"
+          android:drawableTop="@mipmap/huangweixin"
+            android:background="@null"
+            android:text="微信登录"
+            android:drawablePadding="8dp"
+            android:textColor="#4e4825"
+            android:textSize="14sp"
             android:layout_marginBottom="15dp"/>
-        <ImageButton
+        <Button
             android:id="@+id/kankan"
             android:layout_marginTop="10dp"
-            android:background="@color/transparent"
+            android:background="@drawable/bg_white_yuanjiao"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:text="随便看看!"
+            android:textSize="12sp"
+            android:textColor="#efb413"
             android:src="@mipmap/login_05"/>
     </LinearLayout>
 <LinearLayout
@@ -117,7 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="北京生兼包网络科技有限公司"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:layout_gravity="center_horizontal"
         android:textColor="#7b765c"/>
     <TextView
@@ -125,7 +132,7 @@
         android:layout_height="wrap_content"
         android:text="copyright© 2015-2016 生兼包"
         android:layout_gravity="center_horizontal"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textColor="#7b765c"/>
 </LinearLayout>
 </LinearLayout>

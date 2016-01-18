@@ -44,4 +44,10 @@
     <string name="title_activity_tiku">题库</string>
     <string name="title_activity_ceshi">测试题</string>
     <string name="title_activity_renzheng">实名认证</string>
+    <string name="title_activity_shenfenrezheng">身份证认证</string>
+    <string name="title_activity_ziliao">基本资料</string>
+    <string name="title_activity_wrenzheng">我的认证</string>
+    <string name="title_activity_jibenziliao">JibenziliaoActivity</string>
+    <string name="title_activity_about">关于我们</string>
+    <string name="title_activity_tongzhi">通知</string>
 </resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View style="@style/Line" />
+
+    <RelativeLayout
+        android:id="@+id/taoshengjian_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <ImageView
+            android:id="@+id/ilv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="12dp"
+            android:src="@mipmap/tongzhi" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/ilv"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="通知"
+                android:textColor="#8c8c8c"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/dw_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="您报名的兼职有反馈信息哦，赶紧查看吧。"
+                android:textColor="#555351"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11月11日"
+                android:layout_marginBottom="3dp"
+                android:textColor="#a1a1a1"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View style="@style/Line" />
+</LinearLayout>

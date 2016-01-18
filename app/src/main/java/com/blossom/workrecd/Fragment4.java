@@ -15,6 +15,7 @@ import com.blossom.workrecd.JianzhiFragment.JianzhiActivity;
 import com.blossom.workrecd.Login.LoginActivity;
 import com.blossom.workrecd.View.GridViewForScrollView;
 import com.blossom.workrecd.View.TitleView;
+import com.blossom.workrecd.ziliao.ZiliaoActivity;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
@@ -95,7 +96,7 @@ public class Fragment4 extends Fragment {
         return data_list;
     }
 
-    @OnClick({R.id.piv, R.id.baoming,R.id.luyong,R.id.wancheng,R.id.daipingjia})
+    @OnClick({R.id.piv, R.id.baoming,R.id.luyong,R.id.wancheng,R.id.daipingjia,R.id.jibenziliao,R.id.zhanneixiaoxi,R.id.about})
     public void myClick(View v) {
         switch (v.getId()) {
             case R.id.piv:
@@ -122,6 +123,19 @@ public class Fragment4 extends Fragment {
                 pj.putExtra("flag","3");
                 startActivity(pj);
                 break;
+            case R.id.jibenziliao:
+                Intent jbzl= new Intent(myPartent.getContext(),ZiliaoActivity.class);
+                startActivity(jbzl);
+                break;
+            case R.id.zhanneixiaoxi:
+                Intent znxx= new Intent(myPartent.getContext(),TongzhiActivity.class);
+                startActivity(znxx);
+                break;
+            case R.id.about:
+                Intent about= new Intent(myPartent.getContext(),AboutActivity.class);
+                startActivity(about);
+                break;
+
         }
     }
 

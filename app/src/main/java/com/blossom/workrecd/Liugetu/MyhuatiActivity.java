@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 
+import com.blossom.workrecd.HuatiActivity;
 import com.blossom.workrecd.MsgActivity;
 import com.blossom.workrecd.R;
 import com.blossom.workrecd.View.TitleView;
@@ -45,11 +46,15 @@ public class MyhuatiActivity extends Activity {
         });
 
     }
-    @OnClick({R.id.left_btn})
+    @OnClick({R.id.left_btn,R.id.huati})
     public void myClick(View v){
         switch (v.getId()){
             case R.id.left_btn:
                 finish();
+                break;
+            case R.id.huati:
+                Intent intent = new Intent(MyhuatiActivity.this,HuatiActivity.class);
+                startActivity(intent);
                 break;
         }
     }

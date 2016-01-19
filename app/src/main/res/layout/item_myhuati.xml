@@ -5,7 +5,7 @@
     android:layout_marginRight="20dp"
     android:layout_height="wrap_content">
     <RelativeLayout
-        android:id="@+id/zhiding_01"
+        android:id="@+id/huati"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:focusable="true">

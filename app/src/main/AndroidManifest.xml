@@ -176,6 +176,38 @@
             android:name=".TongzhiActivity"
             android:label="@string/title_activity_tongzhi" >
         </activity>
+        <activity
+            android:name=".SuccessrenzhengActivity"
+            android:label="@string/title_activity_success" >
+        </activity>
+        <activity
+            android:name=".SuccessregActivity"
+            android:label="@string/title_activity_successreg" >
+        </activity>
+        <activity
+            android:name=".Setting.SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".Setting.AnquanmimaActivity"
+            android:label="@string/title_activity_anquanmima" >
+        </activity>
+        <activity
+            android:name=".Setting.ModifydengluActivity"
+            android:label="@string/title_activity_modifydenglu" >
+        </activity>
+        <activity
+            android:name=".Setting.ModifyzhifuActivity"
+            android:label="@string/title_activity_modifyzhifu" >
+        </activity>
+        <activity
+            android:name=".Setting.ShoujibiangengaActivity"
+            android:label="@string/title_activity_shoujibiangenga" >
+        </activity>
+        <activity
+            android:name=".Setting.ShoujibiangengbActivity"
+            android:label="@string/title_activity_shoujibiangengb" >
+        </activity>
     </application>
 
 </manifest>

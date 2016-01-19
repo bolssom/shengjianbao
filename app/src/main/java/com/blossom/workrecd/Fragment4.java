@@ -8,11 +8,11 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
 import com.blossom.workrecd.JianzhiFragment.JianzhiActivity;
 import com.blossom.workrecd.Login.LoginActivity;
+import com.blossom.workrecd.Setting.SettingActivity;
 import com.blossom.workrecd.View.GridViewForScrollView;
 import com.blossom.workrecd.View.TitleView;
 import com.blossom.workrecd.ziliao.ZiliaoActivity;
@@ -96,7 +96,7 @@ public class Fragment4 extends Fragment {
         return data_list;
     }
 
-    @OnClick({R.id.piv, R.id.baoming,R.id.luyong,R.id.wancheng,R.id.daipingjia,R.id.jibenziliao,R.id.zhanneixiaoxi,R.id.about})
+    @OnClick({R.id.piv, R.id.baoming,R.id.luyong,R.id.wancheng,R.id.daipingjia,R.id.jibenziliao,R.id.zhanneixiaoxi,R.id.about,R.id.seting})
     public void myClick(View v) {
         switch (v.getId()) {
             case R.id.piv:
@@ -134,6 +134,10 @@ public class Fragment4 extends Fragment {
             case R.id.about:
                 Intent about= new Intent(myPartent.getContext(),AboutActivity.class);
                 startActivity(about);
+                break;
+            case R.id.seting:
+                Intent set= new Intent(myPartent.getContext(),SettingActivity.class);
+                startActivity(set);
                 break;
 
         }

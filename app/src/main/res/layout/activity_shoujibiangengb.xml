@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#fed809"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/title_back_btn" />
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/Text.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:paddingLeft="-15dp"
+            android:text="手机变更" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#f3f3ee"/>
+    <View
+        style="@style/Line"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:id="@+id/mima_shouji"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/mima_icon_01"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mima_icon_01" />
+
+                <EditText
+                    android:id="@+id/shouji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/mima_icon_01"
+                    android:layout_marginLeft="12dp"
+                    android:hint="这里输入新手机号"
+                    android:background="@color/transparent"
+                    android:textColorHint="#5f5f5f"
+                    android:textSize="16sp" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="发送验证码"
+                    android:textColor="#606060"
+                    android:background="@drawable/bg_yuan_border"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+            <View style="@style/Line" />
+            <RelativeLayout
+                android:id="@+id/mima_yanzheng"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/mima_icon_02"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mima_icon_02" />
+
+                <EditText
+                    android:id="@+id/yanzhengma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/mima_icon_02"
+                    android:layout_marginLeft="12dp"
+                    android:hint="这里输入验证码"
+                    android:background="@color/transparent"
+                    android:textColor="#5f5f5f"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            style="@style/Line"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/user_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_login_bg"
+            android:textColor="#ffffff"
+            android:text="确认"
+            android:textSize="18dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:gravity="bottom">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\@2015 生兼包"
+            android:textSize="14sp"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#7b765c"/>
+
+    </LinearLayout>
+</LinearLayout>

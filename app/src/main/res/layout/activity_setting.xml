@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#fed809"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/title_back_btn" />
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/Text.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:paddingLeft="-15dp"
+            android:text="设置" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View style="@style/Line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/gomima"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/per_icon_01"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mima_icon_03" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/per_icon_01"
+                    android:text="密码安全"
+                    android:textColor="#777777"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    style="@style/RightIconStyle"
+                    android:src="@mipmap/youjiantou" />
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+
+            <RelativeLayout
+                android:id="@+id/goshouji"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/per_icon_02"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mima_icon_01" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/per_icon_02"
+                    android:text="手机变更"
+                    android:textColor="#777777"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    style="@style/RightIconStyle"
+                    android:src="@mipmap/youjiantou" />
+            </RelativeLayout>
+            <View style="@style/Line" />
+            <RelativeLayout
+                android:id="@+id/gocache"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/per_icon_03"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/lajitong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/per_icon_03"
+                    android:text="清除缓存"
+                    android:textColor="#777777"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    style="@style/RightIconStyle"
+                    android:src="@mipmap/youjiantou" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View style="@style/Line" />
+    </LinearLayout>
+
+</LinearLayout>

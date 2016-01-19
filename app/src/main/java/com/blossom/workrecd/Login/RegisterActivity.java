@@ -2,18 +2,16 @@ package com.blossom.workrecd.Login;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 
-import com.blossom.workrecd.MsgActivity;
 import com.blossom.workrecd.R;
+import com.blossom.workrecd.SuccessregActivity;
 import com.blossom.workrecd.View.TitleView;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 public class RegisterActivity extends Activity {
     @ViewInject(R.id.title)
@@ -37,5 +35,14 @@ public class RegisterActivity extends Activity {
         });
         mtitleview.hiddenRightImageButton();
 
+    }
+    @OnClick({R.id.button_reg})
+    public void myClick(View v){
+        switch (v.getId()){
+            case R.id.button_reg:
+                Intent rg = new Intent(RegisterActivity.this, SuccessregActivity.class);
+                startActivity(rg);
+                break;
+        }
     }
 }

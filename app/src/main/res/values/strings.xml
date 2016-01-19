@@ -50,4 +50,12 @@
     <string name="title_activity_jibenziliao">JibenziliaoActivity</string>
     <string name="title_activity_about">关于我们</string>
     <string name="title_activity_tongzhi">通知</string>
+    <string name="title_activity_success">成功</string>
+    <string name="title_activity_successreg">注册成功</string>
+    <string name="title_activity_setting">设置</string>
+    <string name="title_activity_anquanmima">密码安全</string>
+    <string name="title_activity_modifydenglu">修改登录密码</string>
+    <string name="title_activity_modifyzhifu">修改支付密码</string>
+    <string name="title_activity_shoujibiangenga">手机变更a</string>
+    <string name="title_activity_shoujibiangengb">手机变更2</string>
 </resources>

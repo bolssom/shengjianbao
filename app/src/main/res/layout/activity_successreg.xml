@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fefefe"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#fed809"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#fed809"
+            android:minWidth="30dp"
+            android:paddingLeft="13dp"
+            android:src="@mipmap/title_back_btn" />
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/Text.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:paddingLeft="-15dp"
+            android:text="注册成功" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/img_err"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:src="@mipmap/zhucebaozi"/>
+    <TextView
+        android:id="@+id/txt_success1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册成功"
+        android:textColor="#464442"
+        android:textSize="18sp"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/txt_wanshanziliao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="赶紧"
+        android:textColor="#464442"
+        android:textSize="18sp"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>

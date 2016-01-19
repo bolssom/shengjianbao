@@ -8,17 +8,24 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
 
 import com.blossom.workrecd.JianzhiFragment.JianzhiActivity;
+import com.blossom.workrecd.Liugetu.MyhuatiActivity;
+import com.blossom.workrecd.Liugetu.MytikuActivity;
+import com.blossom.workrecd.Liugetu.ShengyaActivity;
+import com.blossom.workrecd.Liugetu.ShoucangActivity;
 import com.blossom.workrecd.Login.LoginActivity;
 import com.blossom.workrecd.Setting.SettingActivity;
+import com.blossom.workrecd.Utils.ToastHelper;
 import com.blossom.workrecd.View.GridViewForScrollView;
 import com.blossom.workrecd.View.TitleView;
 import com.blossom.workrecd.ziliao.ZiliaoActivity;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
+import com.lidroid.xutils.view.annotation.event.OnItemClick;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -96,7 +103,7 @@ public class Fragment4 extends Fragment {
         return data_list;
     }
 
-    @OnClick({R.id.piv, R.id.baoming,R.id.luyong,R.id.wancheng,R.id.daipingjia,R.id.jibenziliao,R.id.zhanneixiaoxi,R.id.about,R.id.seting})
+    @OnClick({R.id.piv, R.id.baoming, R.id.luyong, R.id.wancheng, R.id.daipingjia, R.id.jibenziliao, R.id.zhanneixiaoxi, R.id.about, R.id.seting})
     public void myClick(View v) {
         switch (v.getId()) {
             case R.id.piv:
@@ -104,43 +111,74 @@ public class Fragment4 extends Fragment {
                 startActivity(login);
                 break;
             case R.id.baoming:
-                Intent bm= new Intent(myPartent.getContext(),JianzhiActivity.class);
-                bm.putExtra("flag","0");
+                Intent bm = new Intent(myPartent.getContext(), JianzhiActivity.class);
+                bm.putExtra("flag", "0");
                 startActivity(bm);
                 break;
             case R.id.luyong:
-                Intent ly= new Intent(myPartent.getContext(),JianzhiActivity.class);
-                ly.putExtra("flag","1");
+                Intent ly = new Intent(myPartent.getContext(), JianzhiActivity.class);
+                ly.putExtra("flag", "1");
                 startActivity(ly);
                 break;
             case R.id.wancheng:
-                Intent wc= new Intent(myPartent.getContext(),JianzhiActivity.class);
-                wc.putExtra("flag","2");
+                Intent wc = new Intent(myPartent.getContext(), JianzhiActivity.class);
+                wc.putExtra("flag", "2");
                 startActivity(wc);
                 break;
             case R.id.daipingjia:
-                Intent pj= new Intent(myPartent.getContext(),JianzhiActivity.class);
-                pj.putExtra("flag","3");
+                Intent pj = new Intent(myPartent.getContext(), JianzhiActivity.class);
+                pj.putExtra("flag", "3");
                 startActivity(pj);
                 break;
             case R.id.jibenziliao:
-                Intent jbzl= new Intent(myPartent.getContext(),ZiliaoActivity.class);
+                Intent jbzl = new Intent(myPartent.getContext(), ZiliaoActivity.class);
                 startActivity(jbzl);
                 break;
             case R.id.zhanneixiaoxi:
-                Intent znxx= new Intent(myPartent.getContext(),TongzhiActivity.class);
+                Intent znxx = new Intent(myPartent.getContext(), TongzhiActivity.class);
                 startActivity(znxx);
                 break;
             case R.id.about:
-                Intent about= new Intent(myPartent.getContext(),AboutActivity.class);
+                Intent about = new Intent(myPartent.getContext(), AboutActivity.class);
                 startActivity(about);
                 break;
             case R.id.seting:
-                Intent set= new Intent(myPartent.getContext(),SettingActivity.class);
+                Intent set = new Intent(myPartent.getContext(), SettingActivity.class);
                 startActivity(set);
                 break;
 
         }
+    }
+
+    @OnItemClick(R.id.myinfogridview)
+    public void myItemClick(AdapterView<?> parent, View v, int position, long id) {
+        switch (position) {
+            case 0:
+                Intent shengya = new Intent(myPartent.getContext(), ShengyaActivity.class);
+                startActivity(shengya);
+                break;
+            case 1:
+                Intent qianbao = new Intent(myPartent.getContext(), TikuActivity.class);
+                startActivity(qianbao);
+                break;
+            case 2:
+                Intent jifen = new Intent(myPartent.getContext(), TikuActivity.class);
+                startActivity(jifen);
+                break;
+            case 3:
+                Intent shoucang = new Intent(myPartent.getContext(), ShoucangActivity.class);
+                startActivity(shoucang);
+                break;
+            case 4:
+                Intent tiku = new Intent(myPartent.getContext(), MytikuActivity.class);
+                startActivity(tiku);
+                break;
+            case 5:
+                Intent huati = new Intent(myPartent.getContext(), MyhuatiActivity.class);
+                startActivity(huati);
+                break;
+        }
+
     }
 
     @Override

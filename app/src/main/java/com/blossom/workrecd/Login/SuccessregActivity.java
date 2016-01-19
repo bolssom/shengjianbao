@@ -1,4 +1,4 @@
-package com.blossom.workrecd;
+package com.blossom.workrecd.Login;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.blossom.workrecd.R;
 import com.blossom.workrecd.ziliao.JibenziliaoActivity;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;

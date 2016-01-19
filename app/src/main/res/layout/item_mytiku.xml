@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/tiku_title"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/per_icon_01"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:paddingLeft="5dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/per_icon_01" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/per_icon_01"
+            android:text="xxx商家的测试标题"
+            android:textColor="#777777"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingRight="5dp"
+           android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="已完" />
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@color/line"/>
+    </RelativeLayout>
+
+</LinearLayout>

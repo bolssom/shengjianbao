@@ -9,9 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.blossom.workrecd.PingjiaActivity;
 import com.blossom.workrecd.R;
-import com.blossom.workrecd.TousuActivity;
 import com.blossom.workrecd.View.TitleView;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;

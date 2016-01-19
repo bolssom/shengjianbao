@@ -285,13 +285,14 @@
                     android:id="@+id/myinfogridview"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:horizontalSpacing="0.0dip"
+                    android:horizontalSpacing="1.0dip"
                     android:listSelector="@null"
                     android:numColumns="3"
                     android:scrollbars="none"
                     android:stretchMode="columnWidth"
-                    android:verticalSpacing="0.0dip" />
-
+                    android:background="#ffcccccc"
+                    android:verticalSpacing="1.0dip" />
+                <View style="@style/Line" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

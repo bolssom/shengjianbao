@@ -58,4 +58,8 @@
     <string name="title_activity_modifyzhifu">修改支付密码</string>
     <string name="title_activity_shoujibiangenga">手机变更a</string>
     <string name="title_activity_shoujibiangengb">手机变更2</string>
+    <string name="title_activity_mytiku">我的题库</string>
+    <string name="title_activity_shoucang">收藏</string>
+    <string name="title_activity_shengya">生涯</string>
+    <string name="title_activity_myhuati">我的话题</string>
 </resources>

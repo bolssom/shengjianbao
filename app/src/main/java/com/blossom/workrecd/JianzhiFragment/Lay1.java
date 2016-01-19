@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.blossom.workrecd.BaomingquxiaoActivity;
-import com.blossom.workrecd.DetailActivity;
 import com.blossom.workrecd.R;
 import com.blossom.workrecd.View.TitleView;
 import com.lidroid.xutils.ViewUtils;

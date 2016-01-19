@@ -129,15 +129,15 @@
             android:label="@string/title_activity_jianzhi" >
         </activity>
         <activity
-            android:name=".PingjiaActivity"
+            android:name=".JianzhiFragment.PingjiaActivity"
             android:label="@string/title_activity_pingjia" >
         </activity>
         <activity
-            android:name=".TousuActivity"
+            android:name=".JianzhiFragment.TousuActivity"
             android:label="@string/title_activity_tousu" >
         </activity>
         <activity
-            android:name=".BaomingquxiaoActivity"
+            android:name=".JianzhiFragment.BaomingquxiaoActivity"
             android:label="@string/title_activity_baomingquxiao" >
         </activity>
         <activity
@@ -177,11 +177,11 @@
             android:label="@string/title_activity_tongzhi" >
         </activity>
         <activity
-            android:name=".SuccessrenzhengActivity"
+            android:name=".ziliao.SuccessrenzhengActivity"
             android:label="@string/title_activity_success" >
         </activity>
         <activity
-            android:name=".SuccessregActivity"
+            android:name=".Login.SuccessregActivity"
             android:label="@string/title_activity_successreg" >
         </activity>
         <activity
@@ -207,6 +207,22 @@
         <activity
             android:name=".Setting.ShoujibiangengbActivity"
             android:label="@string/title_activity_shoujibiangengb" >
+        </activity>
+        <activity
+            android:name=".Liugetu.MytikuActivity"
+            android:label="@string/title_activity_mytiku" >
+        </activity>
+        <activity
+            android:name=".Liugetu.ShoucangActivity"
+            android:label="@string/title_activity_shoucang" >
+        </activity>
+        <activity
+            android:name=".Liugetu.ShengyaActivity"
+            android:label="@string/title_activity_shengya" >
+        </activity>
+        <activity
+            android:name=".Liugetu.MyhuatiActivity"
+            android:label="@string/title_activity_myhuati" >
         </activity>
     </application>
 

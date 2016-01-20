@@ -14,11 +14,11 @@ import android.widget.SimpleAdapter;
 import com.blossom.workrecd.JianzhiFragment.JianzhiActivity;
 import com.blossom.workrecd.Liugetu.MyhuatiActivity;
 import com.blossom.workrecd.Liugetu.MytikuActivity;
+import com.blossom.workrecd.Liugetu.Qianbao.QianbaoActivity;
 import com.blossom.workrecd.Liugetu.ShengyaActivity;
 import com.blossom.workrecd.Liugetu.ShoucangActivity;
 import com.blossom.workrecd.Login.LoginActivity;
 import com.blossom.workrecd.Setting.SettingActivity;
-import com.blossom.workrecd.Utils.ToastHelper;
 import com.blossom.workrecd.View.GridViewForScrollView;
 import com.blossom.workrecd.View.TitleView;
 import com.blossom.workrecd.ziliao.ZiliaoActivity;
@@ -158,7 +158,7 @@ public class Fragment4 extends Fragment {
                 startActivity(shengya);
                 break;
             case 1:
-                Intent qianbao = new Intent(myPartent.getContext(), TikuActivity.class);
+                Intent qianbao = new Intent(myPartent.getContext(), QianbaoActivity.class);
                 startActivity(qianbao);
                 break;
             case 2:

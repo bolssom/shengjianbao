@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+
+    <com.blossom.workrecd.View.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/goyinhangka"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/bg_yinhang" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工商银行"
+                android:textColor="#FFFFD8"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="储蓄卡"
+                android:textColor="#FFFFD8"
+                android:textSize="16sp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/bg"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:text="******************1234"
+            android:layout_marginRight="5dp"
+            android:textColor="#FFFFD8"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+<View style="@style/Line"/>
+    <RelativeLayout
+        android:id="@+id/tianjia"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical"
+        android:background="@color/white">
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/jiahao"/>
+        <TextView
+            android:layout_toRightOf="@+id/iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="添加银行卡"
+            android:textColor="#595959"
+            android:textSize="16sp"/>
+        <ImageView
+            style="@style/RightIconStyle"
+            android:layout_marginRight="8dp"
+            android:src="@mipmap/youjiantou" />
+    </RelativeLayout>
+    <View style="@style/Line"/>
+</LinearLayout>

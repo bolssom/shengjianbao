@@ -224,6 +224,38 @@
             android:name=".Liugetu.MyhuatiActivity"
             android:label="@string/title_activity_myhuati" >
         </activity>
+        <activity
+            android:name=".Liugetu.Qianbao.QianbaoActivity"
+            android:label="@string/title_activity_qianbao" >
+        </activity>
+        <activity
+            android:name=".Liugetu.Qianbao.ZhanghuyueActivity"
+            android:label="@string/title_activity_zhanghuyue" >
+        </activity>
+        <activity
+            android:name=".Liugetu.Qianbao.ChongzhiActivity"
+            android:label="@string/title_activity_chongzhi" >
+        </activity>
+        <activity
+            android:name=".Liugetu.Qianbao.TixianActivity"
+            android:label="@string/title_activity_tixian" >
+        </activity>
+        <activity
+            android:name=".Liugetu.Qianbao.MingxiActivity"
+            android:label="@string/title_activity_mingxi" >
+        </activity>
+        <activity
+            android:name=".Liugetu.Qianbao.YinhangkaActivity"
+            android:label="@string/title_activity_yinhangka" >
+        </activity>
+        <activity
+            android:name=".Liugetu.Qianbao.TianjiakaActivity"
+            android:label="@string/title_activity_tianjiaka" >
+        </activity>
+        <activity
+            android:name=".Liugetu.Qianbao.DetailkaActivity"
+            android:label="@string/title_activity_detailka" >
+        </activity>
     </application>
 
 </manifest>

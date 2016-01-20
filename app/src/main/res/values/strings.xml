@@ -62,4 +62,12 @@
     <string name="title_activity_shoucang">收藏</string>
     <string name="title_activity_shengya">生涯</string>
     <string name="title_activity_myhuati">我的话题</string>
+    <string name="title_activity_qianbao">钱包</string>
+    <string name="title_activity_zhanghuyue">账户余额</string>
+    <string name="title_activity_chongzhi">充值</string>
+    <string name="title_activity_tixian">提现</string>
+    <string name="title_activity_mingxi">收支明细</string>
+    <string name="title_activity_yinhangka">银行卡</string>
+    <string name="title_activity_tianjiaka">添加银行卡</string>
+    <string name="title_activity_detailka">银行卡详情</string>
 </resources>

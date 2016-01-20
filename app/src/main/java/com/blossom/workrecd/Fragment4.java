@@ -1,17 +1,26 @@
 package com.blossom.workrecd;
 
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blossom.workrecd.JianzhiFragment.JianzhiActivity;
+import com.blossom.workrecd.Liugetu.JifenActivity;
 import com.blossom.workrecd.Liugetu.MyhuatiActivity;
 import com.blossom.workrecd.Liugetu.MytikuActivity;
 import com.blossom.workrecd.Liugetu.Qianbao.QianbaoActivity;
@@ -19,8 +28,14 @@ import com.blossom.workrecd.Liugetu.ShengyaActivity;
 import com.blossom.workrecd.Liugetu.ShoucangActivity;
 import com.blossom.workrecd.Login.LoginActivity;
 import com.blossom.workrecd.Setting.SettingActivity;
+import com.blossom.workrecd.Utils.CommonUtils;
+import com.blossom.workrecd.Utils.FileUtil;
+import com.blossom.workrecd.Utils.ToastHelper;
+import com.blossom.workrecd.View.CoverSelelctPopupWindow;
 import com.blossom.workrecd.View.GridViewForScrollView;
+import com.blossom.workrecd.View.RoundedImageView;
 import com.blossom.workrecd.View.TitleView;
+import com.blossom.workrecd.ziliao.WrenzhengActivity;
 import com.blossom.workrecd.ziliao.ZiliaoActivity;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -42,9 +57,20 @@ public class Fragment4 extends Fragment {
     private FragmentActivity mactivity;
     @ViewInject(R.id.title)
     private TitleView mtitleview;
+    @ViewInject(R.id.piv)
+    private RoundedImageView imgCover;
     @ViewInject(R.id.myinfogridview)
     private GridViewForScrollView myInFoGridView;
     private List<Map<String, Object>> data_list;
+
+    private CoverSelelctPopupWindow coverSelelctPopupWindow;
+
+    public static final int ACTIVITY_ALBUM_REQUESTCODE = 2000;
+
+    public static final int ACTIVITY_CAMERA_REQUESTCODE = 2001;
+
+    public static final int ACTIVITY_MODIFY_PHOTO_REQUESTCODE = 2002;
+
     private int[] icon_pic = {
             R.mipmap.person_gv_01,
             R.mipmap.person_gv_02,
@@ -103,12 +129,20 @@ public class Fragment4 extends Fragment {
         return data_list;
     }
 
-    @OnClick({R.id.piv, R.id.baoming, R.id.luyong, R.id.wancheng, R.id.daipingjia, R.id.jibenziliao, R.id.zhanneixiaoxi, R.id.about, R.id.seting})
+    @OnClick({R.id.piv,R.id.gorenzheng, R.id.baoming, R.id.luyong, R.id.wancheng, R.id.daipingjia, R.id.jibenziliao, R.id.zhanneixiaoxi, R.id.about, R.id.seting})
     public void myClick(View v) {
         switch (v.getId()) {
             case R.id.piv:
+                coverSelelctPopupWindow = new CoverSelelctPopupWindow(mactivity, itemsOnClick);
+                coverSelelctPopupWindow.showAtLocation(myPartent.findViewById(R.id.pname), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                break;
+            case R.id.myinfo:
                 Intent login = new Intent(myPartent.getContext(), LoginActivity.class);
                 startActivity(login);
+                break;
+            case R.id.gorenzheng:
+                Intent rz = new Intent(myPartent.getContext(), WrenzhengActivity.class);
+                startActivity(rz);
                 break;
             case R.id.baoming:
                 Intent bm = new Intent(myPartent.getContext(), JianzhiActivity.class);
@@ -162,7 +196,7 @@ public class Fragment4 extends Fragment {
                 startActivity(qianbao);
                 break;
             case 2:
-                Intent jifen = new Intent(myPartent.getContext(), TikuActivity.class);
+                Intent jifen = new Intent(myPartent.getContext(), JifenActivity.class);
                 startActivity(jifen);
                 break;
             case 3:
@@ -180,7 +214,82 @@ public class Fragment4 extends Fragment {
         }
 
     }
+    // 为弹出窗口实现监听类
+    private View.OnClickListener itemsOnClick = new View.OnClickListener() {
+        public void onClick(View v) {
+            coverSelelctPopupWindow.dismiss();
+            if (CommonUtils.isFastDoubleClick()) {
+                return;
+            }
+            switch (v.getId()) {
+                case R.id.btn_album:
+                    Intent i = new Intent(Intent.ACTION_PICK, null);// 调用android的图库
+                    i.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+                    startActivityForResult(i, ACTIVITY_ALBUM_REQUESTCODE);
+                    break;
 
+                case R.id.btn_photo_graph:
+                    if (CommonUtils.isExistCamera(myPartent.getContext())) {
+                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);// 调用android自带的照相机
+                        Uri imageUri = Uri.fromFile(FileUtil.getHeadPhotoFileRaw());
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                        intent.putExtra(MediaStore.Images.Media.ORIENTATION, 0);
+                        startActivityForResult(intent, ACTIVITY_CAMERA_REQUESTCODE);
+                    } else {
+                        Toast.makeText(myPartent.getContext(),
+                                getResources().getString(R.string.user_no_camera),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+            }
+        }
+    };
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case ACTIVITY_ALBUM_REQUESTCODE:
+                if (resultCode == Activity.RESULT_OK) {
+                    if(data.getData() == null){
+                       ToastHelper.show(myPartent.getContext(), getString(R.string.pic_not_valid));
+                        return;
+                    }
+                    CommonUtils.cutPhoto(mactivity, data.getData(), true);
+                }
+                break;
+            case ACTIVITY_CAMERA_REQUESTCODE:
+                if (resultCode == Activity.RESULT_OK) {
+                    BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
+                    bitmapOptions.inSampleSize = 2;
+                    int degree = FileUtil.readPictureDegree(FileUtil.getHeadPhotoDir() + FileUtil.HEADPHOTO_NAME_RAW);
+                    Bitmap cameraBitmap = BitmapFactory.decodeFile(FileUtil.getHeadPhotoDir() + FileUtil.HEADPHOTO_NAME_RAW, bitmapOptions);
+                    cameraBitmap = FileUtil.rotaingImageView(degree, cameraBitmap);
+                    FileUtil.saveCutBitmapForCache(myPartent.getContext(),cameraBitmap);
+                    CommonUtils.cutPhoto(mactivity, Uri.fromFile(FileUtil.getHeadPhotoFileRaw()), true);
+                }
+                break;
+            case ACTIVITY_MODIFY_PHOTO_REQUESTCODE:
+//                Bundle bundle = data.getExtras();
+//                if (bundle != null) {
+//                    Bitmap bitmap = bundle.getParcelable("data");
+//                    if (bitmap == null) {
+//                        return;
+//                    }
+//                    headImg.setImageBitmap(bitmap);
+//                }
+                String coverPath = FileUtil.getHeadPhotoDir()  + FileUtil.HEADPHOTO_NAME_TEMP;
+                Bitmap bitmap = BitmapFactory.decodeFile(coverPath);
+                imgCover.setImageBitmap(bitmap);
+                //接下来是完成上传功能
+               /* HttpUtil.uploadCover(this, UrlContainer.UP_LIVE_COVER + "?uid="
+                        + LoginUtils.getInstance(this), coverPath, this);*/
+                //成功之后删除临时图片
+                FileUtil.deleteTempAndRaw();
+
+                break;
+
+        }
+    }
     @Override
     public void setMenuVisibility(boolean menuVisible) {
         super.setMenuVisibility(menuVisible);

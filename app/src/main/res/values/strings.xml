@@ -70,4 +70,12 @@
     <string name="title_activity_yinhangka">银行卡</string>
     <string name="title_activity_tianjiaka">添加银行卡</string>
     <string name="title_activity_detailka">银行卡详情</string>
+    <string name="title_activity_jifen">积分明细</string>
+    <string name="title_activity_jifenmingxi">积分明细</string>
+    <string name="title_activity_shangpindetail">商品详情</string>
+    <string name="user_info_photo_album">从相册选择</string>
+    <string name="user_info_photo_camera">拍照</string>
+    <string name="join_cancel_txt">取消</string>
+    <string name="user_no_camera">未发现您的摄像头，请确认您的设备存在摄像头再使用此功能～</string>
+    <string name="pic_not_valid">图片无效，请重试</string>
 </resources>

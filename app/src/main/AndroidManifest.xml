@@ -256,6 +256,18 @@
             android:name=".Liugetu.Qianbao.DetailkaActivity"
             android:label="@string/title_activity_detailka" >
         </activity>
+        <activity
+            android:name=".Liugetu.JifenActivity"
+            android:label="@string/title_activity_jifen" >
+        </activity>
+        <activity
+            android:name=".Liugetu.JifenmingxiActivity"
+            android:label="@string/title_activity_jifenmingxi" >
+        </activity>
+        <activity
+            android:name=".Liugetu.ShangpindetailActivity"
+            android:label="@string/title_activity_shangpindetail" >
+        </activity>
     </application>
 
 </manifest>

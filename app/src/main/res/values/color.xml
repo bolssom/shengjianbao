@@ -16,8 +16,8 @@
     <color name="choose_eara_item_press_color">#f4f4f4</color>
     <color name="wanshanziliao">#57c6ba</color>
 
-    <color name="radio_color_bg_selected">#cccccc</color>
-    <color name="radio_color_bg_normal">#fbfbfb</color>
+    <color name="radio_color_bg_selected">#fbfbfb</color>
+    <color name="radio_color_bg_normal">#fefefe</color>
 
     <color name="f33e363d">#f33e363d</color>
     <color name="_3e363d">#3e363d</color>

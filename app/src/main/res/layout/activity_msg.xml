@@ -46,6 +46,7 @@
         android:background="@drawable/radiobtn_bg"
         />
 </RadioGroup>
+    <View style="@style/Line"/>
     <LinearLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
@@ -60,13 +61,22 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/layout2"
-        android:visibility="gone"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="好友请求d"/>
+        <com.blossom.workrecd.View.swipelistview.SwipeListView
+            xmlns:swipe="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/example_lv_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            swipe:swipeActionLeft="reveal"
+            swipe:swipeBackView="@+id/id_back"
+            swipe:swipeCloseAllItemsWhenMoveList="true"
+            swipe:swipeFrontView="@+id/id_front"
+            swipe:swipeMode="left"
+            swipe:swipeOffsetLeft="270dip"
+            swipe:swipeOffsetRight="0dp"
+            swipe:swipeOpenOnLongPress="true" />
     </LinearLayout>
 
 </LinearLayout>

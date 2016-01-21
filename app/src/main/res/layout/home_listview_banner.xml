@@ -20,7 +20,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="86dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <Button
@@ -28,44 +29,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/buttonstyle"
-            android:drawablePadding="10dp"
+            android:background="@null"
+            android:drawablePadding="8dp"
             android:drawableTop="@mipmap/h_rjzq"
-            android:paddingBottom="10dp"
-            android:paddingTop="16dp"
+            android:layout_gravity="center_vertical"
             android:text="日结专区"
             android:textColor="#a1a1a1"
-            android:textSize="17sp" />
-
+            android:textSize="16sp" />
+<View style="@style/SLine"/>
         <Button
             android:id="@+id/btn_sjxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/buttonstyle"
-            android:drawablePadding="10dp"
+            android:background="@null"
+            android:drawablePadding="8dp"
+            android:layout_gravity="center_vertical"
             android:drawableTop="@mipmap/h_sjxt"
-            android:paddingBottom="10dp"
-            android:paddingTop="16dp"
             android:text="生兼学堂"
             android:textColor="#a1a1a1"
-            android:textSize="17sp" />
-
+            android:textSize="16sp" />
+        <View style="@style/SLine"/>
         <Button
             android:id="@+id/btn_rmzx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:drawablePadding="10dp"
+            android:background="@null"
+            android:drawablePadding="8dp"
             android:drawableTop="@mipmap/h_rmjx"
-            android:paddingBottom="10dp"
-            android:paddingTop="16dp"
+            android:layout_gravity="center_vertical"
             android:text="热门资讯"
             android:textColor="#a1a1a1"
-            android:textSize="17sp" />
+            android:textSize="16sp" />
     </LinearLayout>
-
+    <View style="@style/SLine"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="4dp"
@@ -92,7 +90,7 @@
             android:layout_gravity="center_vertical"
             android:text="推荐兼职"
             android:textColor="#a1a1a1"
-            android:textSize="17sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 

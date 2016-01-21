@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-   >
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <com.blossom.workrecd.View.TitleView
         android:id="@+id/title"
@@ -13,6 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:checkedButton="@+id/radio_z"
+    android:background="#f2f2f2"
     android:orientation="horizontal">
     <RadioButton
         android:id="@+id/radio_z"
@@ -49,9 +50,12 @@
         android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:orientation="vertical">
         <include layout="@layout/item_friend"/>
+        <View style="@style/Line"/>
         <include layout="@layout/item_friend"/>
+        <View style="@style/Line"/>
         <include layout="@layout/item_friend"/>
     </LinearLayout>
     <LinearLayout
@@ -62,7 +66,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="好友请求dddddd"/>
+            android:text="好友请求d"/>
     </LinearLayout>
 
 </LinearLayout>

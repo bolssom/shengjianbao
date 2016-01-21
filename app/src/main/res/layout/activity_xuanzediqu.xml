@@ -27,8 +27,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:paddingLeft="-15dp"
             android:layout_weight="1"
+            android:paddingLeft="-15dp"
             android:text="选择地区" />
 
     </LinearLayout>
@@ -36,131 +36,133 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
         android:background="@color/white"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <View style="@style/Line" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:descendantFocusability="blocksDescendants"
-            android:focusable="true">
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:drawableLeft="@mipmap/icon_sousuo"
-                android:drawablePadding="5dp"
-                android:hint="地区选择"
-                android:padding="10dip"
-                android:textColor="#515151"
-                android:background="@null"
-                android:textSize="16dp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true">
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:drawableLeft="@mipmap/fangdajing"
+                    android:drawablePadding="5dp"
+                    android:hint="地区选择"
+                    android:textColor="#515151"
+                    android:textSize="16dp" />
 
 
-        </RelativeLayout>
+            </RelativeLayout>
 
-        <View style="@style/Line" />
+            <View style="@style/Line" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:descendantFocusability="blocksDescendants"
-            android:focusable="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:descendantFocusability="blocksDescendants"
+                android:focusable="true">
 
-            <ImageView
-                android:id="@+id/dy_icon_02"
-                android:layout_width="36dp"
-                android:layout_height="38dp"
-                android:src="@mipmap/zuobiao" />
+                <ImageView
+                    android:id="@+id/dy_icon_02"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/zuobiao" />
 
-            <TextView
-                style="@style/DyTextStyle"
-                android:layout_toRightOf="@id/dy_icon_02"
-                android:text="当前定位城市" />
+                <TextView
+                    style="@style/DyTextStyle"
+                    android:layout_toRightOf="@id/dy_icon_02"
+                    android:text="当前定位城市" />
 
 
-           <TextView
-               style="@style/RightIconStyle"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="太原"
-               android:textSize="16dp"/>
-        </RelativeLayout>
+                <TextView
+                    style="@style/RightIconStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="太原"
+                    android:textSize="16dp" />
+            </RelativeLayout>
 
-        <View style="@style/Line" />
+            <View style="@style/Line" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_margin="5dp"
-            android:descendantFocusability="blocksDescendants"
-            android:focusable="true">
-            <TextView
-                style="@style/DyTextStyle"
-                android:layout_toRightOf="@id/dy_icon_04"
-                android:text="小店区" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:focusable="true">
 
-            <ImageView
-                style="@style/RightIconStyle"
-                android:src="@mipmap/jiahao" />
-        </RelativeLayout>
+                <TextView
+                    style="@style/DyTextStyle"
+                    android:layout_toRightOf="@id/dy_icon_04"
+                    android:text="小店区" />
 
-        <View style="@style/Line" />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_margin="5dp"
-            android:descendantFocusability="blocksDescendants"
-            android:focusable="true">
-            <TextView
-                style="@style/DyTextStyle"
-                android:layout_toRightOf="@id/dy_icon_04"
-                android:text="小店区" />
+                <ImageView
+                    style="@style/RightIconStyle"
+                    android:src="@mipmap/xiaojiahao" />
+            </RelativeLayout>
 
-            <ImageView
-                style="@style/RightIconStyle"
-                android:src="@mipmap/jiahao" />
-        </RelativeLayout>
+            <View style="@style/Line" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:focusable="true">
 
-        <View style="@style/Line" />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_margin="5dp"
-            android:descendantFocusability="blocksDescendants"
-            android:focusable="true">
-            <TextView
-                style="@style/DyTextStyle"
-                android:layout_toRightOf="@id/dy_icon_04"
-                android:text="小店区" />
+                <TextView
+                    style="@style/DyTextStyle"
+                    android:layout_toRightOf="@id/dy_icon_04"
+                    android:text="小店区" />
 
-            <ImageView
-                style="@style/RightIconStyle"
-                android:src="@mipmap/jiahao" />
-        </RelativeLayout>
+                <ImageView
+                    style="@style/RightIconStyle"
+                    android:src="@mipmap/xiaojiahao" />
+            </RelativeLayout>
 
-        <View style="@style/Line" />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_margin="5dp"
-            android:descendantFocusability="blocksDescendants"
-            android:focusable="true">
-            <TextView
-                style="@style/DyTextStyle"
-                android:layout_toRightOf="@id/dy_icon_04"
-                android:text="小店区" />
+            <View style="@style/Line" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:focusable="true">
 
-            <ImageView
-                style="@style/RightIconStyle"
-                android:src="@mipmap/jiahao" />
-        </RelativeLayout>
+                <TextView
+                    style="@style/DyTextStyle"
+                    android:layout_toRightOf="@id/dy_icon_04"
+                    android:text="小店区" />
 
-        <View style="@style/Line" />
+                <ImageView
+                    style="@style/RightIconStyle"
+                    android:src="@mipmap/xiaojiahao" />
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:focusable="true">
+
+                <TextView
+                    style="@style/DyTextStyle"
+                    android:layout_toRightOf="@id/dy_icon_04"
+                    android:text="小店区" />
+
+                <ImageView
+                    style="@style/RightIconStyle"
+                    android:src="@mipmap/xiaojiahao" />
+            </RelativeLayout>
+
+            <View style="@style/Line" />
+        </LinearLayout>
+
     </LinearLayout>
-
-
 </LinearLayout>

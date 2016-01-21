@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#fefefe"
     android:orientation="vertical">
 
     <com.blossom.workrecd.View.TitleView
@@ -12,20 +13,22 @@
     <com.blossom.workrecd.Utils.imagecycleview.ImageCycleView
         android:id="@+id/ad_view"
         android:layout_width="fill_parent"
-        android:layout_height="180dp" />
+        android:layout_height="150dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="6dp">
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp">
 
         <ImageButton
             android:id="@+id/imgbtn_mingqi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
             android:background="@null"
             android:src="@mipmap/remen_mqjx" />

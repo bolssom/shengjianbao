@@ -25,19 +25,20 @@
                 android:layout_height="113dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp">
+
                 <com.blossom.workrecd.View.RoundedImageView
                     android:id="@+id/piv"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginRight="13dp"
                     android:layout_centerVertical="true"
-                    android:src="@mipmap/touxiang_luntan"/>
-                    <!--圆角边框app:border_color="#999999"-->
-                    <!--app:border_width="1dip"-->
-                    <!--app:corner_radius="10dp"-->
-                    <!--app:mutate_background="true"-->
-                    <!--app:oval="false" />-->
+                    android:layout_marginRight="13dp"
+                    android:src="@mipmap/touxiang_luntan" />
+                <!--圆角边框app:border_color="#999999"-->
+                <!--app:border_width="1dip"-->
+                <!--app:corner_radius="10dp"-->
+                <!--app:mutate_background="true"-->
+                <!--app:oval="false" />-->
 
                 <LinearLayout
                     android:id="@+id/myinfo"
@@ -71,33 +72,35 @@
                             android:src="@mipmap/sibaozi" />
                     </LinearLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginBottom="5dp">
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="180dp"
-        android:layout_height="15dp"
-        android:layout_weight="0.2"
-        android:max="100"
-        android:layout_marginRight="12dp"
-        android:layout_gravity="fill_vertical"
-        android:progress="30"
-        android:progressDrawable="@drawable/progressbar" />
-    <Button
-        android:id="@+id/gorenzheng"
-        android:layout_width="60dp"
-        android:layout_height="18dp"
-        android:background="@drawable/btn_login_bg"
-        android:layout_weight="0.8"
-        android:layout_gravity="fill_vertical"
-        android:textColor="@color/white"
-        android:textSize="10sp"
-        android:text="去认证"/>
-</LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="180dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="fill_vertical"
+                            android:layout_marginRight="12dp"
+                            android:layout_weight="0.2"
+                            android:max="100"
+                            android:progress="30"
+                            android:progressDrawable="@drawable/progressbar" />
+
+                        <Button
+                            android:id="@+id/gorenzheng"
+                            android:layout_width="60dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="fill_vertical"
+                            android:layout_weight="0.8"
+                            android:background="@drawable/btn_login_selector"
+                            android:text="去认证"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -105,15 +108,18 @@
                         android:layout_centerVertical="true"
                         android:layout_marginTop="4dp"
                         android:orientation="horizontal">
+
                         <RelativeLayout
                             android:layout_width="180dp"
                             android:layout_height="wrap_content">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
                                 android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
                                 android:orientation="horizontal">
+
                                 <ImageView
                                     android:layout_width="18dp"
                                     android:layout_height="18dp"
@@ -129,12 +135,14 @@
                                     android:textColor="#747474"
                                     android:textSize="10sp" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentRight="true"
                                 android:layout_centerVertical="true"
                                 android:orientation="horizontal">
+
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -183,10 +191,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#474747"
                         android:layout_marginTop="3dp"
-                        android:textSize="12sp"
-                        android:text="已报名" />
+                        android:text="已报名"
+                        android:textColor="#474747"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -209,10 +217,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#474747"
-                        android:textSize="12sp"
                         android:layout_marginTop="3dp"
-                        android:text="已录用" />
+                        android:text="已录用"
+                        android:textColor="#474747"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -235,10 +243,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#474747"
                         android:layout_marginTop="3dp"
-                        android:textSize="12sp"
-                        android:text="已完成" />
+                        android:text="已完成"
+                        android:textColor="#474747"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -262,9 +270,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
+                        android:text="待评价"
                         android:textColor="#474747"
-                        android:textSize="12sp"
-                        android:text="待评价" />
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -276,7 +284,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:background="#f2f2f2" />
+
             <View style="@style/Line" />
+
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -286,14 +296,16 @@
                     android:id="@+id/myinfogridview"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:background="#ffcccccc"
                     android:horizontalSpacing="1.0dip"
                     android:listSelector="@null"
                     android:numColumns="3"
                     android:scrollbars="none"
                     android:stretchMode="columnWidth"
-                    android:background="#ffcccccc"
                     android:verticalSpacing="1.0dip" />
+
                 <View style="@style/Line" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -401,9 +413,9 @@
                             android:layout_centerVertical="true"
                             android:layout_marginRight="5dp"
                             android:layout_toLeftOf="@+id/banbenjiatou"
+                            android:text="V 1.0"
                             android:textColor="#777777"
-                            android:textSize="16sp"
-                            android:text="V 1.0" />
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:id="@+id/banbenjiatou"
@@ -442,6 +454,7 @@
                     </RelativeLayout>
 
                     <View style="@style/Line" />
+
                     <RelativeLayout
                         android:id="@+id/seting"
                         android:layout_width="match_parent"

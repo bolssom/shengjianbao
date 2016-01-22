@@ -29,7 +29,7 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
-                        android:id="@+id/reg_name"
+
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:focusable="true">
@@ -42,7 +42,8 @@
                             android:src="@mipmap/per_icon_04" />
 
                         <EditText
-                            android:layout_width="wrap_content"
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
@@ -57,7 +58,7 @@
                     <View style="@style/Line" />
 
                     <RelativeLayout
-                        android:id="@+id/reg_shouji"
+
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:focusable="true">
@@ -70,7 +71,8 @@
                             android:src="@mipmap/mima_icon_01" />
 
                         <EditText
-                            android:layout_width="wrap_content"
+                            android:id="@+id/reg_shouji"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
@@ -99,17 +101,20 @@
                             android:src="@mipmap/mima_icon_02" />
 
                         <EditText
-                            android:layout_width="wrap_content"
+                            android:id="@+id/yanzhengma"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
                             android:layout_toRightOf="@id/reg_icon_03"
+                            android:layout_toLeftOf="@+id/sendcode"
                             android:background="@color/transparent"
                             android:hint="输入验证码"
                             android:textColorHint="#606060"
                             android:textSize="16sp" />
 
                         <Button
+                            android:id="@+id/sendcode"
                             android:layout_width="50dp"
                             android:layout_height="25dp"
                             android:layout_alignParentRight="true"
@@ -123,7 +128,6 @@
                     <View style="@style/Line" />
 
                     <RelativeLayout
-                        android:id="@+id/reg_pass1"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:focusable="true">
@@ -136,7 +140,8 @@
                             android:src="@mipmap/mima_icon_03" />
 
                         <EditText
-                            android:layout_width="wrap_content"
+                            android:id="@+id/reg_pass1"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
@@ -152,7 +157,7 @@
 
                     <View style="@style/Line" />
                     <RelativeLayout
-                        android:id="@+id/reg_pass2"
+
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:focusable="true">
@@ -165,7 +170,8 @@
                             android:src="@mipmap/mima_icon_03" />
 
                         <EditText
-                            android:layout_width="wrap_content"
+                            android:id="@+id/reg_pass2"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
@@ -198,10 +204,10 @@
 
 
                 <Button
-                    android:id="@+id/button_reg"
+                    android:id="@+id/submit"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:background="@drawable/btn_login_bg"
+                    android:background="@drawable/btn_login_selector"
                     android:text="保存"
                     android:textColor="#ffffff"
                     android:textSize="18dp" />

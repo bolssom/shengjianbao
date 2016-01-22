@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blossom.workrecd.JianzhiFragment.JianzhiActivity;
@@ -129,7 +128,7 @@ public class Fragment4 extends Fragment {
         return data_list;
     }
 
-    @OnClick({R.id.piv,R.id.gorenzheng, R.id.baoming, R.id.luyong, R.id.wancheng, R.id.daipingjia, R.id.jibenziliao, R.id.zhanneixiaoxi, R.id.about, R.id.seting})
+    @OnClick({R.id.piv,R.id.myinfo,R.id.gorenzheng, R.id.baoming, R.id.luyong, R.id.wancheng, R.id.daipingjia, R.id.jibenziliao, R.id.zhanneixiaoxi, R.id.about, R.id.seting})
     public void myClick(View v) {
         switch (v.getId()) {
             case R.id.piv:

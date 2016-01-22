@@ -141,7 +141,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/btn_login_bg"
+        android:background="@drawable/btn_login_selector"
         android:text="申请添加好友"
         android:textColor="@color/white"
         android:textSize="18sp" />

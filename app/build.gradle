@@ -31,9 +31,10 @@ dependencies {
     android {
         useLibrary 'org.apache.http.legacy'
     }
-    compile files('libs/locSDK_6.13.jar')
     compile files('libs/xUtils-2.6.14.jar')
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'com.jungly:gridPasswordView:0.3'
     compile files('libs/nineoldroid.jar')
+    compile files('libs/AMap_Android_3DMapSDK_V3.1.1.jar')
+    compile files('libs/AMap_Location_v2.3.0_20160112.jar')
 }

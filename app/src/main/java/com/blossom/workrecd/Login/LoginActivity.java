@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blossom.workrecd.CommonUrl;
 import com.blossom.workrecd.MainActivity;
 import com.blossom.workrecd.R;
 import com.blossom.workrecd.Utils.ToastHelper;
@@ -20,6 +21,9 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -75,19 +79,20 @@ public class LoginActivity extends Activity {
     }
     public void login_submit(){
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat();
-        Date date = new Date(System.currentTimeMillis());
-        // String time = dateFormat.format(date);
-        String time = ""+System.currentTimeMillis();
-        String httpUrl = "http://42.51.27.36/recruit/sys/sysuser/appLogin";
-        //System.out.println(httpUrl+"?time="+time);
+//        SimpleDateFormat dateFormat = new SimpleDateFormat();
+//        Date date = new Date(System.currentTimeMillis());
+//        // String time = dateFormat.format(date);
+//        String time = ""+System.currentTimeMillis();
+//        String httpUrl = "http://42.51.27.36/recruit/sys/sysuser/appLogin";
         RequestParams params = new RequestParams();
-        params.addQueryStringParameter("tel","13994243208");
-        params.addQueryStringParameter("password", "123123");
-        params.addQueryStringParameter("time",time);
+        params.addQueryStringParameter("phone","1");
+        params.addQueryStringParameter("password", login_password.getText().toString().trim());
+        params.addQueryStringParameter("role","3");
+        params.addQueryStringParameter("tel",login_username.getText().toString().trim());
         HttpUtils http = new HttpUtils();
         http.configCurrentHttpCacheExpiry(1000 * 10);
-        http.send(HttpRequest.HttpMethod.POST, httpUrl, params,new RequestCallBack<String>() {
+
+        http.send(HttpRequest.HttpMethod.POST, CommonUrl.Login_URL, params,new RequestCallBack<String>() {
             @Override
             public void onStart() {
                 //resultText.setText("conn.....");
@@ -104,13 +109,30 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
-                //resultText.setText("replay:"+responseInfo.result);
-                ToastHelper.show(LoginActivity.this,responseInfo.result);
+                String res = responseInfo.result;
+                try {
+                    JSONObject jsonObject = new JSONObject(res);
+                    String rs =  jsonObject.getString("result");
+                    System.out.println("res--->" + rs);
+                    switch (rs){
+                        case "1":
+                            ToastHelper.show(LoginActivity.this, "成功，返回用户实体详细见用户实体");
+                            break;
+                        case "-1":
+                            ToastHelper.show(LoginActivity.this, "用户名有误或已被禁用");
+                            break;
+                        case "-2":
+                            ToastHelper.show(LoginActivity.this, "密码错误");
+                            break;
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override
             public void onFailure(HttpException e, String s) {
-               // resultText.setText("login msg----"+s);
             }
         });
     }

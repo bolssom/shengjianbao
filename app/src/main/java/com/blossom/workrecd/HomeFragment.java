@@ -1,6 +1,8 @@
 package com.blossom.workrecd;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,9 +16,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.blossom.workrecd.Adapter.JianZhiAdapter;
-import com.blossom.workrecd.ContactList.CitylistActivity;
 import com.blossom.workrecd.Dao.JianZhiBean;
 import com.blossom.workrecd.Dao.TuiJianBean;
 import com.blossom.workrecd.Utils.CustomListView;
@@ -35,7 +37,6 @@ import com.lidroid.xutils.view.annotation.event.OnItemClick;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment implements View.OnClickListener{
-    private static final String TAG = HomeFragment.class.getSimpleName();
     private static final int WHAT_DID_LOAD_DATA = 0;
     private static final int WHAT_DID_REFRESH = 1;
     private static final int WHAT_DID_MORE = 2;
@@ -53,12 +54,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     @ViewInject(R.id.home_right_btn)
     private ImageButton home_right_btn;
     @ViewInject(R.id.home_location)
-    private LinearLayout home_linear_location;
+    private LinearLayout home_location;
+    @ViewInject(R.id.city)
+    private TextView city;
 
 
     private ImageView home_dingyue;
     private Button btn_rjzq,btn_sjxt,btn_rmzx;
-
+    private SharedPreferences preferences;
     private ArrayList<JianZhiBean> mList = new ArrayList<JianZhiBean>();
     private JianZhiAdapter mAdapter;
 
@@ -69,7 +72,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                     if (msg.obj != null) {
                         TuiJianBean tjdata = (TuiJianBean) msg.obj;
                         mList.addAll(tjdata.getData());
-                       // System.out.println("load--->" + mList + "/n");
+                        System.out.println("load--->" + mList + "/n");
                         mAdapter.notifyDataSetChanged();
                     }
                     break;
@@ -116,6 +119,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         mActivity = getActivity();
         mParent = getView();
         initdata();
+        //首页listview的头部
         View hv = LayoutInflater.from(mParent.getContext()).inflate(R.layout.home_listview_banner, null);
         btn_rjzq = (Button)hv.findViewById(R.id.btn_rjzq);
         btn_sjxt = (Button)hv.findViewById(R.id.btn_sjxt);
@@ -146,10 +150,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             }
         });
 
+        //定位城市
+        preferences = mActivity.getSharedPreferences("cityInfo", Activity.MODE_PRIVATE);
+        String loccity = preferences.getString("city", "");
+        if(!loccity.isEmpty()) {
+        city.setText(loccity);
+        }
     }
 
     @OnClick({R.id.home_right_btn, R.id.home_location})
-    public void home_left_right(View v) {
+    public void myClick(View v) {
         switch (v.getId()) {
             case R.id.home_right_btn:
                 goMoreActivity();
@@ -174,7 +184,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         params.addQueryStringParameter("sort", "[{\"property\":\"dateAdd\",\"direction\":\"DESC\"}]");
         HttpUtils http = new HttpUtils();
         http.configCurrentHttpCacheExpiry(1000 * 10);
-        http.send(HttpRequest.HttpMethod.GET, CommonUrl.HOME_URL, params, new RequestCallBack<String>() {
+        http.send(HttpRequest.HttpMethod.POST, CommonUrl.HOME_URL, params, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
                 jsonstr = responseInfo.result;
@@ -294,7 +304,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
 
     private void goCityList() {
-        Intent intent = new Intent(mActivity, CitylistActivity.class);
+        Intent intent = new Intent(mActivity, XuanzediquActivity.class);
         startActivity(intent);
     }
 

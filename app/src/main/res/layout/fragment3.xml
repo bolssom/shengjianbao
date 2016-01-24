@@ -81,20 +81,18 @@
 
 
     </LinearLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <include layout="@layout/item_luntan"/>
-            <include layout="@layout/item_luntan"/>
-            <include layout="@layout/item_luntan"/>
-            <include layout="@layout/item_luntan"/>
-            <include layout="@layout/item_luntan"/>
+            <com.blossom.workrecd.Utils.CustomListView
+                android:id="@+id/mListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:cacheColorHint="@android:color/transparent" />
         </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>
 

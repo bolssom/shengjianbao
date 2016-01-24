@@ -14,7 +14,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/piv"
+                android:id="@+id/logo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentLeft="true"
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:layout_toRightOf="@+id/piv"
+                android:layout_toRightOf="@+id/logo"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -39,7 +39,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/pname"
+                            android:id="@+id/username"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -58,7 +58,7 @@
                             android:src="@mipmap/icon_nv" />
 
                         <TextView
-                            android:id="@+id/pschool"
+                            android:id="@+id/fromSchool"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -81,7 +81,7 @@
                             android:src="@mipmap/shijian" />
 
                         <TextView
-                            android:id="@+id/datetime"
+                            android:id="@+id/dateAdd"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -98,6 +98,7 @@
                     android:layout_marginTop="11dp">
 
                     <TextView
+                        android:id="@+id/articleContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="16dp"
@@ -138,6 +139,7 @@
                     android:src="@mipmap/icon_luntan_01" />
 
                 <TextView
+                    android:id="@+id/praiseNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="6dp"
@@ -162,6 +164,7 @@
                     android:src="@mipmap/icon_luntan_02" />
 
                 <TextView
+                    android:id="@+id/shareNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -186,6 +189,7 @@
                     android:src="@mipmap/icon_luntan_03" />
 
                 <TextView
+                    android:id="@+id/evaluateNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"

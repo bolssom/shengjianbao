@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.blossom.workrecd.DaohangActivity;
 import com.blossom.workrecd.R;
 import com.blossom.workrecd.View.TitleView;
 import com.lidroid.xutils.ViewUtils;
@@ -32,12 +33,16 @@ public class Lay1 extends Fragment {
         mActivity = getActivity();
         mParent = getView();
     }
-    @OnClick(R.id.quxiaobaoming)
+    @OnClick({R.id.quxiaobaoming,R.id.daohang})
     public void myClick(View v) {
         switch (v.getId()) {
             case R.id.quxiaobaoming:
                 Intent qxbm = new Intent(mParent.getContext(), BaomingquxiaoActivity.class);
                 startActivity(qxbm);
+                break;
+            case R.id.daohang:
+                Intent dh = new Intent(mParent.getContext(), DaohangActivity.class);
+                startActivity(dh);
                 break;
         }
     }

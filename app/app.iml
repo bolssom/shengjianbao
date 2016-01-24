@@ -93,21 +93,16 @@
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
-    <orderEntry type="library" exported="" name="pinyin4j-2.5.0" level="project" />
-    <orderEntry type="library" exported="" name="baidumapapi_map_v3_6_1" level="project" />
-    <orderEntry type="library" exported="" name="baidumapapi_radar_v3_6_1" level="project" />
-    <orderEntry type="library" exported="" name="baidumapapi_search_v3_6_1" level="project" />
-    <orderEntry type="library" exported="" name="baidumapapi_cloud_v3_6_1" level="project" />
-    <orderEntry type="library" exported="" name="pinyin4android1.0" level="project" />
     <orderEntry type="library" exported="" name="pagerslidingtabstrip-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="gridPasswordView-0.3" level="project" />
     <orderEntry type="library" exported="" name="xUtils-2.6.14" level="project" />
     <orderEntry type="library" exported="" name="nineoldroid" level="project" />
-    <orderEntry type="library" exported="" name="baidumapapi_base_v3_6_1" level="project" />
+    <orderEntry type="library" exported="" name="AMap_Navi_v1.6.0_20151229" level="project" />
+    <orderEntry type="library" exported="" name="AMap_Android_3DMapSDK_V3.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.0.1" level="project" />
-    <orderEntry type="library" exported="" name="locSDK_6.13" level="project" />
-    <orderEntry type="library" exported="" name="baidumapapi_util_v3_6_1" level="project" />
+    <orderEntry type="library" exported="" name="Msc" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
+    <orderEntry type="library" exported="" name="AMap_Location_v2.3.0_20160112" level="project" />
   </component>
 </module>

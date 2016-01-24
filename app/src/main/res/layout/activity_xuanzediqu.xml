@@ -77,18 +77,19 @@
                 android:focusable="true">
 
                 <ImageView
-                    android:id="@+id/dy_icon_02"
+                    android:id="@+id/dingwei"
                     android:layout_width="25dp"
                     android:layout_height="30dp"
                     android:src="@mipmap/zuobiao" />
 
                 <TextView
                     style="@style/DyTextStyle"
-                    android:layout_toRightOf="@id/dy_icon_02"
+                    android:layout_toRightOf="@id/dingwei"
                     android:text="当前定位城市" />
 
 
                 <TextView
+                    android:id="@+id/tvReult"
                     style="@style/RightIconStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,6 +105,7 @@
                 android:focusable="true">
 
                 <TextView
+                    android:id="@+id/qu"
                     style="@style/DyTextStyle"
                     android:layout_toRightOf="@id/dy_icon_04"
                     android:text="小店区" />

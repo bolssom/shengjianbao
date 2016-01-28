@@ -1,5 +1,6 @@
 package com.blossom.workrecd;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -46,7 +47,13 @@ public class MainActivity extends FragmentActivity  implements
         mTab3.setOnClickListener(this);
         mTab4.setOnClickListener(this);
 
-        mTab1.performClick();
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("login",-1);
+        if(id==1){
+            mTab4.performClick();
+        }else {
+            mTab1.performClick();
+        }
     }
 
     @Override
@@ -124,7 +131,6 @@ public class MainActivity extends FragmentActivity  implements
         }
         return super.onKeyDown(keyCode, event);
     }
-
 
 }
 

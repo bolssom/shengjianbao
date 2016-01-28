@@ -13,7 +13,7 @@ public class CommonUrl {
     public static final String REGPHONE_URL = BASE + "/sys/sysuser/registerverifyphone";//发送手机验证码
     public static final String REG_URL = BASE + "/sys/sysuser/registerUserPhone";//提交注册
     //登录接口
-    public static final String Login_URL = BASE + "/sys/sysuser/appLogin";//提交登录
+    public static final String Login_URL = BASE + "/sys/sysuser/frontlogin";//提交登录
 //生煎论坛普通
     public static final String Luntan_URL = BASE + "/user/userarticle/getUserArticleList";
 

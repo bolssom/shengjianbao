@@ -86,13 +86,14 @@ public class RegisterActivity extends Activity {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
                 res = responseInfo.result;
+                System.out.println("手机验证码返回--->" + res);
                 JSONObject jsonObject = null;
                 try {
                     jsonObject = new JSONObject(res);
                     String rs =  jsonObject.getString("result");
                     if (rs.equals("1")) {
                         ToastHelper.show(RegisterActivity.this, "发送成功");
-                    } else if (res.equals("2")) {
+                    } else if (rs.equals("2")) {
                         ToastHelper.show(RegisterActivity.this, "该手机号码已注册");
                     }
                 } catch (JSONException e) {

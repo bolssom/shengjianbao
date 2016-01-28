@@ -1,7 +1,9 @@
 package com.blossom.workrecd.Login;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -25,9 +27,6 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class LoginActivity extends Activity {
     @ViewInject(R.id.login_username)
     private EditText login_username;
@@ -37,6 +36,8 @@ public class LoginActivity extends Activity {
     private TextView user_login_button;
     @ViewInject(R.id.user_register_button)
     private TextView user_register_button;
+
+    private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +79,7 @@ public class LoginActivity extends Activity {
         return false;
     }
     public void login_submit(){
-
+        System.out.println("in login--->");
 //        SimpleDateFormat dateFormat = new SimpleDateFormat();
 //        Date date = new Date(System.currentTimeMillis());
 //        // String time = dateFormat.format(date);
@@ -92,7 +93,7 @@ public class LoginActivity extends Activity {
         HttpUtils http = new HttpUtils();
         http.configCurrentHttpCacheExpiry(1000 * 10);
 
-        http.send(HttpRequest.HttpMethod.POST, CommonUrl.Login_URL, params,new RequestCallBack<String>() {
+        http.send(HttpRequest.HttpMethod.POST, CommonUrl.Login_URL, params, new RequestCallBack<String>() {
             @Override
             public void onStart() {
                 //resultText.setText("conn.....");
@@ -100,10 +101,10 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onLoading(long total, long current, boolean isUploading) {
-                if (isUploading){
+                if (isUploading) {
                     //resultText.setText("upload:"+current+"/"+total);
-                }else {
-                   // resultText.setText("replay:"+current+"/"+total);
+                } else {
+                    // resultText.setText("replay:"+current+"/"+total);
                 }
             }
 
@@ -112,10 +113,19 @@ public class LoginActivity extends Activity {
                 String res = responseInfo.result;
                 try {
                     JSONObject jsonObject = new JSONObject(res);
-                    String rs =  jsonObject.getString("result");
-                    System.out.println("res--->" + rs);
-                    switch (rs){
+                    System.out.println("登录请求--->" + jsonObject);
+                    String rs = jsonObject.getString("result");
+
+                    switch (rs) {
                         case "1":
+                            String  userinfo = jsonObject.getString("entity");
+                            sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("entity",userinfo);
+                            editor.commit();
+                            Intent lg = new Intent(LoginActivity.this, MainActivity.class);
+                            lg.putExtra("login",1);
+                            startActivity(lg);
                             ToastHelper.show(LoginActivity.this, "成功，返回用户实体详细见用户实体");
                             break;
                         case "-1":

@@ -2,7 +2,9 @@ package com.blossom.workrecd;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -16,8 +18,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blossom.workrecd.Dao.UserInfoBean;
 import com.blossom.workrecd.JianzhiFragment.JianzhiActivity;
 import com.blossom.workrecd.Liugetu.JifenActivity;
 import com.blossom.workrecd.Liugetu.MyhuatiActivity;
@@ -36,6 +40,8 @@ import com.blossom.workrecd.View.RoundedImageView;
 import com.blossom.workrecd.View.TitleView;
 import com.blossom.workrecd.ziliao.WrenzhengActivity;
 import com.blossom.workrecd.ziliao.ZiliaoActivity;
+import com.google.gson.Gson;
+import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
@@ -50,12 +56,18 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment4 extends Fragment {
+public class Fragment4 extends Fragment implements  android.view.View.OnClickListener {
 
     private View myPartent;
     private FragmentActivity mactivity;
     @ViewInject(R.id.title)
     private TitleView mtitleview;
+    @ViewInject(R.id.pname)
+    private TextView name;
+    @ViewInject(R.id.xinyong)
+    private TextView credit;
+    @ViewInject(R.id.jifen)
+    private TextView integration;
     @ViewInject(R.id.piv)
     private RoundedImageView imgCover;
     @ViewInject(R.id.myinfogridview)
@@ -79,6 +91,9 @@ public class Fragment4 extends Fragment {
             R.mipmap.person_gv_06};
     private String[] icon_name = {"生涯", "钱包", "积分", "收藏", "题库", "话题"};
 
+    private SharedPreferences sharedPreferences;
+    private String UserCode;
+    private   BitmapUtils bitmapUtils;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -115,6 +130,23 @@ public class Fragment4 extends Fragment {
                 startActivity(msgintent);
             }
         });
+        sharedPreferences = mactivity.getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+        String entity = sharedPreferences.getString("entity","");
+        if (!entity.isEmpty()){
+            Gson gson = new Gson();
+            UserInfoBean userInfoBean = gson.fromJson(entity, UserInfoBean.class);
+            UserCode = userInfoBean.getUserCode();
+            name.setText(userInfoBean.getUserName());
+            credit.setText(String.valueOf(userInfoBean.getUserCredit()));
+           integration.setText(String.valueOf(userInfoBean.getUserIntegration()));
+            String imgurl = CommonUrl.BASE+userInfoBean.getUserPhoto();
+            System.out.println("imgurl---->" + imgurl);
+            if (!imgurl.equals(CommonUrl.BASE+"null")) {
+                bitmapUtils = new BitmapUtils(myPartent.getContext());
+                bitmapUtils.display(imgCover, imgurl);
+            }
+        }
+
 
     }
 
@@ -279,11 +311,12 @@ public class Fragment4 extends Fragment {
                 String coverPath = FileUtil.getHeadPhotoDir()  + FileUtil.HEADPHOTO_NAME_TEMP;
                 Bitmap bitmap = BitmapFactory.decodeFile(coverPath);
                 imgCover.setImageBitmap(bitmap);
+                System.out.println("imgpath--------->"+coverPath);
                 //接下来是完成上传功能
                /* HttpUtil.uploadCover(this, UrlContainer.UP_LIVE_COVER + "?uid="
                         + LoginUtils.getInstance(this), coverPath, this);*/
                 //成功之后删除临时图片
-                FileUtil.deleteTempAndRaw();
+               // FileUtil.deleteTempAndRaw();
 
                 break;
 
@@ -294,5 +327,10 @@ public class Fragment4 extends Fragment {
         super.setMenuVisibility(menuVisible);
         if (this.getView() != null)
             this.getView().setVisibility(menuVisible ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
@@ -125,13 +125,19 @@
                                     android:layout_height="18dp"
                                     android:layout_marginRight="5dp"
                                     android:src="@mipmap/taoxin" />
-
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="信用值："
+                                    android:textColor="#747474"
+                                    android:textSize="10sp" />
                                 <TextView
                                     android:id="@+id/xinyong"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="信用值：302"
+                                    android:text="302"
                                     android:textColor="#747474"
                                     android:textSize="10sp" />
                             </LinearLayout>
@@ -148,13 +154,19 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginRight="5dp"
                                     android:src="@mipmap/jifentu" />
-
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="积分："
+                                    android:textColor="#747474"
+                                    android:textSize="10sp" />
                                 <TextView
                                     android:id="@+id/jifen"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="信用值：302"
+                                    android:text="302"
                                     android:textColor="#747474"
                                     android:textSize="10sp" />
                             </LinearLayout>

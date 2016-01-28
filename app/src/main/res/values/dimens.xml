@@ -8,4 +8,8 @@
     <dimen name="margin_left">15dp</dimen>
     <dimen name="margin_right">15dp</dimen>
     <dimen name="margin_middle">2dp</dimen>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
 </resources>

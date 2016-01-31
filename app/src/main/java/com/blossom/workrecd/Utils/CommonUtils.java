@@ -1,8 +1,6 @@
 
 package com.blossom.workrecd.Utils;
 
-import com.blossom.workrecd.Fragment4;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +8,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+
+import com.blossom.workrecd.Fragment4;
 
 public class CommonUtils {
     /**
@@ -66,6 +66,7 @@ public class CommonUtils {
             intent.putExtra("scale", "true");
             intent.putExtra("output", Uri.fromFile(FileUtil.getWallPaperFile()));
         }
+        System.out.println("in cut--------->"+intent);
         ActivityUtil.startActivityForResultIntent(activity, intent, null,
                 Fragment4.ACTIVITY_MODIFY_PHOTO_REQUESTCODE, false);
     }

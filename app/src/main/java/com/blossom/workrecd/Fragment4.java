@@ -278,6 +278,7 @@ public class Fragment4 extends Fragment implements  android.view.View.OnClickLis
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        System.out.println("in result--------->");
         switch (requestCode) {
             case ACTIVITY_ALBUM_REQUESTCODE:
                 if (resultCode == Activity.RESULT_OK) {
@@ -285,6 +286,7 @@ public class Fragment4 extends Fragment implements  android.view.View.OnClickLis
                        ToastHelper.show(myPartent.getContext(), getString(R.string.pic_not_valid));
                         return;
                     }
+                    System.out.println("go cut--------->"+data.getData());
                     CommonUtils.cutPhoto(mactivity, data.getData(), true);
                 }
                 break;
@@ -308,6 +310,7 @@ public class Fragment4 extends Fragment implements  android.view.View.OnClickLis
 //                    }
 //                    headImg.setImageBitmap(bitmap);
 //                }
+                System.out.println("in modify--------->");
                 String coverPath = FileUtil.getHeadPhotoDir()  + FileUtil.HEADPHOTO_NAME_TEMP;
                 Bitmap bitmap = BitmapFactory.decodeFile(coverPath);
                 imgCover.setImageBitmap(bitmap);
